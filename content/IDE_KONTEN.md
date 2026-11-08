@@ -1,7 +1,7 @@
 # Bank ide Bongkar Benda (objek raksasa, relevan Indonesia)
 
 - [x] Lift, kok nggak jatuh? — EP01
-- [ ] Terowongan MRT, kok nggak ambruk? — **REKOMENDASI berikutnya**, detail di bawah (#1)
+- [x] Terowongan MRT, kok nggak ambruk? — EP02
 - [ ] Pesawat, kok nggak kesetrum petir? — detail #2
 - [ ] Kereta cepat, kok bisa 350 km/jam? (Whoosh) — detail #3
 - [ ] Eskalator, kok tangganya nggak habis? — detail #4
@@ -19,7 +19,7 @@
 
 Semua mengikuti pola yang menang: objek raksasa yang dilihat semua orang, hook bahaya/kejutan yang **bergerak sejak frame pertama**, visual isometrik 3D yang **dibelah**, satu video tuntas (tanpa part 2), warna logo (krem, navy, oranye; air digambar navy transparan, bukan biru). Angka bertanda "cek" wajib diverifikasi ulang saat riset produksi (`content/EPxx_nama.md`).
 
-### 1. Terowongan MRT, kok nggak ambruk? ⭐ rekomendasi
+### 1. Terowongan MRT, kok nggak ambruk? ✅ jadi EP02
 - **Hook 0–3 dtk:** "Di atas terowongan ini ada jalan raya, gedung, dan ribuan mobil. Kok nggak ambruk?"
   Visual: kamera menembus aspal jalan Jakarta yang dibelah (mobil tetap lewat di atas), tanah sempat retak, lalu terlihat mesin bor raksasa yang kepala pisaunya berputar.
 - **Alasan 1-2-3:** (1) mesin bor menahan tanah di depannya: tanah galian di ruang depan ditekan seimbang dengan tekanan tanah & air (teknologi *Earth Pressure Balance*); (2) cincin dinding beton dipasang langsung di belakang pisau bor, segmen demi segmen; (3) celah di luar cincin diisi semen (grouting) supaya tanah di atas tidak turun.

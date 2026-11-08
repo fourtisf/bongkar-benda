@@ -1,0 +1,58 @@
+[
+ {
+  "i": 0,
+  "anchor": 0.15,
+  "text": "Di atas terowongan ini ada jalan raya, gedung, dan ribuan mobil. Kok nggak ambruk? Ini alasannya.",
+  "file": "vo/l00.wav",
+  "dur": 7.013
+ },
+ {
+  "i": 1,
+  "anchor": 5.5,
+  "text": "Pertama, mesin bor seberat lebih dari tiga ratus ton ini menahan tanah di depannya. Tanah galiannya ditekan balik, jadi dorongannya seimbang.",
+  "file": "vo/l01.wav",
+  "dur": 7.829
+ },
+ {
+  "i": 2,
+  "anchor": 12.5,
+  "text": "Kedua, sambil maju, mesin ini langsung memasang cincin beton jadi dinding terowongan.",
+  "file": "vo/l02.wav",
+  "dur": 4.688
+ },
+ {
+  "i": 3,
+  "anchor": 17.1,
+  "text": "Ketiga, celah di belakang cincin disuntik semen. Jadi tanah di atasnya nggak ikut turun.",
+  "file": "vo/l03.wav",
+  "dur": 5.057
+ },
+ {
+  "i": 4,
+  "anchor": 21.95,
+  "text": "Idenya dari Marc Brunel. Tahun delapan belas dua puluh lima, dia menggali terowongan di bawah Sungai Thames pakai perisai besi.",
+  "file": "vo/l04.wav",
+  "dur": 6.144
+ },
+ {
+  "i": 5,
+  "anchor": 28.8,
+  "text": "Di Jakarta, terowongan MRT terbaru bahkan ada yang sedalam dua puluh delapan meter.",
+  "file": "vo/l05.wav",
+  "dur": 5.168
+ },
+ {
+  "i": 6,
+  "anchor": 33.4,
+  "text": "Benda apa yang mau kamu bongkar berikutnya? Tulis di komentar!",
+  "file": "vo/l06.wav",
+  "dur": 2.695
+ },
+ {
+  "i": 7,
+  "anchor": 36.6,
+  "text": "Follow Bongkar Benda, biar makin paham cara kerja benda di sekitarmu.",
+  "file": "vo/l07.wav",
+  "dur": 2.966
+ }
+]

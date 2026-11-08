@@ -16,15 +16,15 @@ from iso import Iso, tone, quad, box, shadow, poly
 bb.TITLE = ('Terowongan MRT,', 'kok nggak ambruk?'); bb.TITLE_OUT = 5.2
 bb.GROUPS = [(0.0, 5.5, 'A'), (5.5, 12.5, 'B'), (12.5, 17.1, 'C'), (17.1, 21.95, 'D'), (21.95, 28.8, 'E'),
              (28.8, 33.4, 'F'), (33.4, 36.6, 'G'), (36.6, 42.0, 'J')]
-bb.PHRASES = [(0.15, 'Di atas [terowongan] ini'), (1.3, 'ada [jalan raya], [gedung],'), (2.4, 'dan [ribuan mobil].'), (3.3, 'Kok nggak [ambruk]?'), (4.45, 'Ini [alasannya].'),
-              (5.5, '[Pertama],'), (6.1, 'mesin bor seberat [lebih dari 300 ton] ini'), (8.0, '[menahan tanah] di depannya.'),
-              (9.6, 'Tanah galiannya [ditekan balik],'), (11.1, 'jadi dorongannya [seimbang].'),
-              (12.5, '[Kedua],'), (13.1, 'sambil maju, mesin ini langsung'), (14.5, 'memasang [cincin beton]'), (15.8, 'jadi [dinding terowongan].'),
-              (17.1, '[Ketiga],'), (17.7, 'celah di belakang cincin'), (18.8, '[disuntik semen].'), (19.9, 'Jadi tanah di atasnya [nggak ikut turun].'),
-              (21.95, 'Idenya dari [Marc Brunel].'), (23.5, 'Tahun [1825],'), (24.6, 'dia menggali terowongan'), (25.8, 'di bawah [Sungai Thames]'), (27.2, 'pakai [perisai besi].'),
-              (28.8, 'Di [Jakarta],'), (29.6, 'terowongan MRT terbaru'), (30.9, 'bahkan ada yang sedalam [28 meter].'),
-              (33.4, 'Benda apa yang mau kamu [bongkar] berikutnya?'), (35.1, 'Tulis di [komentar]!'),
-              (36.6, 'Follow [Bongkar Benda],'), (37.95, 'biar makin paham [cara kerja benda] di sekitarmu.')]
+bb.PHRASES = [(0.15, 'Di atas [terowongan] ini'), (1.41, 'ada [jalan raya], [gedung],'), (2.4, 'dan [ribuan mobil].'), (3.89, 'Kok nggak [ambruk]?'), (4.66, 'Ini [alasannya].'),
+              (5.5, '[Pertama],'), (6.23, 'mesin bor seberat'), (7.31, '[lebih dari 300 ton] ini'), (8.33, '[menahan tanah] di depannya.'),
+              (9.7, 'Tanah galiannya [ditekan balik],'), (10.97, 'jadi dorongannya [seimbang].'),
+              (12.5, '[Kedua],'), (13.05, 'sambil maju,'), (13.86, 'mesin ini langsung memasang [cincin beton]'), (15.43, 'jadi [dinding terowongan].'),
+              (17.1, '[Ketiga],'), (17.86, 'celah di belakang cincin'), (18.95, '[disuntik semen].'), (19.69, 'Jadi tanah di atasnya'), (20.7, '[nggak ikut turun].'),
+              (21.95, 'Idenya dari [Marc Brunel].'), (23.7, 'Tahun [1825],'), (25.04, 'dia menggali terowongan'), (26.09, 'di bawah [Sungai Thames]'), (27.12, 'pakai [perisai besi].'),
+              (28.8, 'Di [Jakarta],'), (29.72, 'terowongan MRT terbaru'), (30.84, 'bahkan ada yang sedalam [28 meter].'),
+              (33.4, 'Benda apa yang mau kamu [bongkar] berikutnya?'), (35.26, 'Tulis di [komentar]!'),
+              (36.6, 'Follow [Bongkar Benda],'), (37.57, 'biar makin paham [cara kerja benda] di sekitarmu.')]
 
 # ------------------------------------------------------------ dunia: potongan kota + tanah yang dibelah di bidang y=0 (sumbu terowongan)
 WORLD = Iso(0, 0, 50)
@@ -323,7 +323,7 @@ def jacks_draw(cv, x_ring, a):
         cv.drawCircle(p1[0], p1[1], 6, P(col(ORANGE, a)))
 
 # ------------------------------------------------------------ A: HOOK — kota di atas terowongan; tanah retak, cincin beton menahan (0 - 5.5)
-T_CR, T_SAVE = 3.25, 4.1
+T_CR, T_SAVE = 3.85, 4.45
 def gA(cv, t):
     u = eio(prog(t, 0.0, 2.7))
     fw = (lerp(-5.2, -5.6, u), lerp(-2.0, -1.2, u), lerp(0.8, -3.2, u)); zoom = lerp(2.35, 1.42, u) * (1 + 0.02 * eio(prog(t, 2.7, 5.5)))
@@ -363,7 +363,7 @@ def gA(cv, t):
         label(cv, 'CINCIN BETON', p[0], p[1], 840, 640, la, sub='menahan tanah')
         check(cv, 985, 575, 26, prog(t, T_SAVE + 0.1, T_SAVE + 0.5), la)
     for k, (num, txt) in enumerate((('1', 'TAHAN TANAH'), ('2', 'CINCIN BETON'), ('3', 'SUNTIK SEMEN'))):
-        q = prog(t, 4.45 + 0.15 * k, 4.75 + 0.15 * k)
+        q = prog(t, 4.7 + 0.15 * k, 5.0 + 0.15 * k)
         if q > 0:
             x = 200 + k * 340; s_ = lerp(0.6, 1, bo(q)); aa = clamp(q * 3)
             cv.save(); cv.translate(x, 1335); cv.scale(s_, s_); cv.translate(-x, -1335)
@@ -383,7 +383,7 @@ def arrow(cv, p0, p1, c, a, w=9, head=20):
 def gB(cv, t):
     a0 = eo(prog(t, 5.5, 5.9)); ang = t * 1.4
     zoom = lerp(2.05, 2.35, eio(prog(t, 5.5, 12.5))); fw = (X1 - 1.6, -0.6, ZC + 0.5); f = P3(*fw); sx, sy = 470, 900
-    whole = 1 - eio(prog(t, 6.3, 7.0)); fill = eio(prog(t, 9.6, 10.6))
+    whole = 1 - eio(prog(t, 6.3, 7.0)); fill = eio(prog(t, 9.7, 10.6))
     cv.save(); cam(cv, f[0], f[1], zoom, sx, sy)
     construction(cv, t, a0, ang, fill=max(0.25, fill) if whole < 1 else 0.25, whole=whole, glow=0.0)
     cv.restore()
@@ -395,35 +395,35 @@ def gB(cv, t):
     if ca > 0:                                                            # kartu fakta TBM MRT Jakarta
         r = skia.Rect(150, 250, 930, 500); card(cv, r, a0 * ca, rad=30)
         mono(cv, 'TBM MRT JAKARTA · FASE 1', r.left() + 44, r.top() + 50, 22, MUTED, a0 * ca, sp=3, align=0)
-        n = int(lerp(0, 323, eo(prog(t, 6.5, 7.6))))
+        n = int(lerp(0, 323, eo(prog(t, 7.31, 8.1))))
         text_c(cv, f'{n} TON', 400, r.top() + 150, 104, INK, a0 * ca)
         text_c(cv, 'diameter 6,7 m', 765, r.top() + 128, 30, INK2, a0 * ca, f=B)
         text_c(cv, 'panjang 43 m', 765, r.top() + 176, 30, INK2, a0 * ca, f=B)
-    pa = eo(prog(t, 8.0, 8.4))
+    pa = eo(prog(t, 8.33, 8.7))
     if pa > 0:                                                            # tekanan tanah & air dari depan
         for k, (yy, zz) in enumerate(((-0.6, ZC + 1.0), (-0.9, ZC), (-0.6, ZC - 1.0))):
-            q = eo(prog(t, 8.0 + 0.12 * k, 8.4 + 0.12 * k)); wob = 6 * math.sin(t * 5 + k)
+            q = eo(prog(t, 8.33 + 0.12 * k, 8.7 + 0.12 * k)); wob = 6 * math.sin(t * 5 + k)
             arrow(cv, S((X1 + 2.0, yy, zz)), S((X1 + 0.45 + 0.04 * wob, yy, zz)), NAVY, a0 * q * (1 - prog(t, 12.2, 12.5)), w=10, head=24)
-        lb = eo(prog(t, 8.4, 8.8)); p = S((X1 + 2.0, -0.6, ZC + 1.6))
+        lb = eo(prog(t, 8.7, 9.0)); p = S((X1 + 2.0, -0.6, ZC + 1.6))
         if lb > 0: chip(cv, 'TEKANAN TANAH + AIR', 790, 1010, a0 * lb * (1 - prog(t, 9.5, 9.8)), size=24, bg=NAVY)
-    qa = eo(prog(t, 9.6, 10.0))
+    qa = eo(prog(t, 9.7, 10.05))
     if qa > 0:                                                            # tanah galian ditekan balik
         lp_ = S((XBH + 0.3, 0, ZC + 0.4)); label(cv, 'RUANG TANAH', lp_[0], lp_[1], 250, 1150, a0 * qa, sub='tanah galian ditekan balik')
         for k, zz in enumerate((ZC + 0.8, ZC - 0.4)):
-            q = eo(prog(t, 9.9 + 0.12 * k, 10.3 + 0.12 * k))
+            q = eo(prog(t, 10.0 + 0.12 * k, 10.4 + 0.12 * k))
             arrow(cv, S((X1 - 0.35, 0, zz)), S((X1 + 0.75, -0.25, zz)), ORANGE, a0 * q * (1 - prog(t, 12.2, 12.5)), w=10, head=24)
-    ga = eo(prog(t, 11.1, 11.4))
+    ga = eo(prog(t, 10.97, 11.3))
     if ga > 0:                                                            # pengukur tekanan: seimbang
         cx, cy = 540, 360; r_ = 92
         card(cv, skia.Rect(cx - 210, cy - 115, cx + 210, cy + 110), a0 * ga, rad=30)
         arc = skia.Path(); arc.addArc(skia.Rect(cx - r_, cy - r_ + 30, cx + r_, cy + r_ + 30), 200, 140)
         cv.drawPath(arc, P(col('#E8DED2', a0 * ga), stroke=22))
         mid = skia.Path(); mid.addArc(skia.Rect(cx - r_, cy - r_ + 30, cx + r_, cy + r_ + 30), 255, 30); cv.drawPath(mid, P(col(ORANGE, a0 * ga), stroke=22))
-        nd = math.radians(270 + 5 * math.sin(t * 3) * (1 - prog(t, 11.4, 11.9)))
+        nd = math.radians(270 + 5 * math.sin(t * 3) * (1 - prog(t, 11.3, 11.8)))
         cv.drawLine(cx, cy + 30, cx + 78 * math.cos(nd), cy + 30 + 78 * math.sin(nd), P(col(INK, a0 * ga), stroke=7)); cv.drawCircle(cx, cy + 30, 12, P(col(INK, a0 * ga)))
         mono(cv, 'TEKANAN DEPAN', cx, cy + 78, 20, MUTED, a0 * ga, sp=3)
-        chip(cv, 'SEIMBANG', 540, 1340, a0 * eo(prog(t, 11.2, 11.5)), size=30, bg=ORANGE)
-        check(cv, cx + 160, cy - 60, 22, prog(t, 11.3, 11.7), a0 * ga)
+        chip(cv, 'SEIMBANG', 540, 1340, a0 * eo(prog(t, 11.05, 11.35)), size=30, bg=ORANGE)
+        check(cv, cx + 160, cy - 60, 22, prog(t, 11.15, 11.55), a0 * ga)
 
 # ------------------------------------------------------------ C: sambil maju, memasang cincin beton (12.5 - 17.1)
 RING_T = [(13.0, 13.4, 13.8), (14.7, 15.05, 15.4), (16.3, 16.6, 16.9)]   # waktu tiap segmen terpasang (bawah -> atas)
@@ -460,7 +460,7 @@ def gC(cv, t):
     lb = eo(prog(t, 13.1, 13.5))
     if lb > 0:
         p = S((X1 - LS + 0.75, 0, ZC)); label(cv, 'LENGAN PEMASANG', p[0], p[1], 760, 420, a0 * lb, sub='menaruh segmen beton')
-    ca = eo(prog(t, 15.8, 16.1))
+    ca = eo(prog(t, 15.43, 15.75))
     if ca > 0: chip(cv, 'JADI DINDING TEROWONGAN', 540, 1340, a0 * ca, size=28, bg=INK)
 
 # ------------------------------------------------------------ D: celah di luar cincin disuntik semen, jalan tetap rata (17.1 - 21.95)
@@ -471,7 +471,7 @@ def circle(r, x=SX1, n=72): return poly([scyl(r, math.tau * i / n, x) for i in r
 def gD(cv, t):
     a0 = eo(prog(t, 17.1, 17.5))
     zoom = lerp(1.5, 1.6, eio(prog(t, 17.1, 21.95))); fw = (SX1 - 1.4, 0.2, SZC + 1.2); f = P3(*fw); sx, sy = 540, 860
-    grout = eio(prog(t, 18.75, 19.9)); sag = eo(prog(t, 17.6, 18.2)) * (1 - eio(prog(t, 18.9, 19.6)))
+    grout = eio(prog(t, 18.95, 20.0)); sag = eo(prog(t, 17.6, 18.2)) * (1 - eio(prog(t, 19.0, 19.7)))
     cv.save(); cam(cv, f[0], f[1], zoom, sx, sy)
     strata(cv, 'y', SY1, SX0, SX1, a0, None, zb=SZB)                     # muka kiri (tanah biasa)
     hole = circle(SRS)
@@ -497,9 +497,9 @@ def gD(cv, t):
     cv.drawPath(ring, P(col(CONC_E, a0), stroke=1.6))
     for d in range(30, 390, 60):
         p0, p1 = scyl(SR, rad(d)), scyl(SRO, rad(d)); cv.drawLine(p0[0], p0[1], p1[0], p1[1], P(col(CONC_E, a0), stroke=2))
-    if 18.6 < t < 20.2:                                                   # nosel suntik di ekor
+    if 18.9 < t < 20.3:                                                   # nosel suntik di ekor
         for d in (230, 310, 90):
-            p0, p1 = scyl(SRO - 0.05, rad(d)), scyl(SRS - 0.1, rad(d)); aa = a0 * bump(prog(t, 18.6, 20.2))
+            p0, p1 = scyl(SRO - 0.05, rad(d)), scyl(SRS - 0.1, rad(d)); aa = a0 * bump(prog(t, 18.9, 20.3))
             cv.drawLine(p0[0], p0[1], p1[0], p1[1], P(col(ORANGE, aa), stroke=7))
     quad(cv, WORLD, [(SX0, SY0, 0), (SX1, SY0, 0), (SX1, SY1, 0), (SX0, SY1, 0)], '#4A5368', a0, grad=((SX0, SY1, 0), (SX0, SY0, 0), '#545E74', '#3F475B'))
     for y in (-1.6, 1.6):
@@ -518,12 +518,12 @@ def gD(cv, t):
     la = eo(prog(t, 17.7, 18.1))
     if la > 0:
         p = S((SX1, -SRS * 0.71 - 0.05, SZC + SRS * 0.71)); label(cv, 'CELAH', p[0], p[1], 250, 560, a0 * la, sub='di luar cincin beton')
-    lb = eo(prog(t, 18.9, 19.3))
+    lb = eo(prog(t, 19.0, 19.4))
     if lb > 0:
         p = S((SX1, SRS * 0.85, SZC - SRS * 0.5)); label(cv, 'SEMEN (GROUT)', p[0], p[1], 820, 1180, a0 * lb, sub='mengisi celah')
-    ca = eo(prog(t, 19.9, 20.2))
+    ca = eo(prog(t, 20.7, 21.0))
     if ca > 0:
-        chip(cv, 'TANAH NGGAK TURUN', 540, 420, a0 * ca, size=28, bg=ORANGE); check(cv, 760, 420, 22, prog(t, 20.0, 20.4), a0 * ca)
+        chip(cv, 'TANAH NGGAK TURUN', 540, 420, a0 * ca, size=28, bg=ORANGE); check(cv, 760, 420, 22, prog(t, 20.8, 21.2), a0 * ca)
 
 # ------------------------------------------------------------ E: Marc Brunel, perisai terowongan, London 1825 (21.95 - 28.8)
 SEPIA, SEPIA_D, SEPIA_INK = '#F3E6CC', '#E2CFA8', '#6B4A2B'
@@ -581,9 +581,9 @@ def gE(cv, t):
     S = lambda x, y: (540 + (x - 540) * 1.14, 770 + (y - 700) * 1.14)
     na = eo(prog(t, 22.2, 22.6))
     if na > 0: p = S(712, 860); label(cv, 'MARC BRUNEL', p[0], p[1], 290, 1240, a0 * na, size=26, sub='insinyur Terowongan Thames')
-    ra = eo(prog(t, 25.8, 26.2))
+    ra = eo(prog(t, 26.09, 26.45))
     if ra > 0: p = S(700, 520); label(cv, 'SUNGAI THAMES', p[0], p[1], 820, 300, a0 * ra, size=26)
-    sa = eo(prog(t, 27.2, 27.5))
+    sa = eo(prog(t, 27.12, 27.45))
     if sa > 0:
         p = S(830, 860); label(cv, 'PERISAI BESI', p[0], p[1], 820, 1230, a0 * sa, size=26, sub='melindungi para penggali')
 
@@ -591,7 +591,7 @@ def gE(cv, t):
 FX0, FY0, FZB, FZT, FTY = -4.8, -7.4, -16.4, -14.0, -3.7                # 1 satuan = 2 m; pusat terowongan di 28 m
 def fcyl(r, th): return P3(0, FTY + r * math.cos(th), FZT + r * math.sin(th))
 def gF(cv, t):
-    a0 = eo(prog(t, 28.8, 29.2)); u = eio(prog(t, 29.6, 31.3))
+    a0 = eo(prog(t, 28.8, 29.2)); u = eio(prog(t, 30.2, 31.9))
     zoom = lerp(1.16, 1.21, eio(prog(t, 28.8, 33.4))); fw = (-2.2, -3.4, -7.4); f = P3(*fw); sx, sy = 540, 790
     cv.save(); cam(cv, f[0], f[1], zoom, sx, sy)
     hole = poly([fcyl(1.4, math.tau * i / 60) for i in range(60)])
@@ -620,7 +620,7 @@ def gF(cv, t):
         pa, pb = P3(0, 0, -k), P3(0, -0.45 if k % 5 else -0.8, -k)
         cv.drawLine(pa[0], pa[1], pb[0], pb[1], P(col(INK, a0), stroke=3 if k % 5 else 4))
     if u > 0.97:
-        da = a0 * eo(prog(t, 31.25, 31.5)); pa, pb = P3(0, 0, FZT), fcyl(1.15, math.pi)
+        da = a0 * eo(prog(t, 31.9, 32.15)); pa, pb = P3(0, 0, FZT), fcyl(1.15, math.pi)
         cv.drawLine(pa[0], pa[1], pb[0], pb[1], P(col(ORANGE, da), stroke=4, effect=skia.DashPathEffect.Make([12, 8], 0)))
     cv.restore()
     S = lambda w_: scr(P3(*w_), f, zoom, sx, sy)
@@ -630,10 +630,10 @@ def gF(cv, t):
         mono(cv, 'KEDALAMAN', 840, 293, 22, MUTED, a0 * ca, sp=4)
         text_c(cv, f'{int(round(28 * u))} m', 840, 375, 92, ORANGE, a0 * ca)
     p = S((0, 0, 0)); text_c(cv, '0 m', p[0] + 75, p[1] + 25, 32, INK, a0 * eo(prog(t, 29.0, 29.3)), halo=1.0)
-    ga = eo(prog(t, 31.0, 31.4))
+    ga = eo(prog(t, 32.1, 32.45))
     if ga > 0:
         p = S((-2.45, 0, -10.2)); label(cv, '≈ GEDUNG 9 LANTAI', p[0], p[1], 250, 300, a0 * ga, dot=INK, size=26, sub='kalau dibalik ke bawah')
-    ta = eo(prog(t, 30.9, 31.2))
+    ta = eo(prog(t, 32.3, 32.6))
     if ta > 0: chip(cv, 'TERDALAM DI INDONESIA', 805, 495, a0 * ta, size=24, bg=INK)
 
 # ------------------------------------------------------------ G: bongkar apa lagi? tulis di komentar (33.4 - 36.6)
@@ -651,7 +651,7 @@ def gG(cv, t):
         cv.drawCircle(r.left() + 42, 0, 24, P(col(c, aa))); cv.drawCircle(r.left() + 42, -6, 9, P(col(WHITE, aa))); cv.drawOval(skia.Rect(r.left() + 28, 4, r.left() + 56, 22), P(col(WHITE, aa)))
         cv.drawString(txt, r.left() + 80, bl(f, 0), f, P(col(INK, aa)))
         cv.restore()
-    ca = eo(prog(t, 35.1, 35.4))
+    ca = eo(prog(t, 35.26, 35.55))
     if ca > 0: chip(cv, 'TULIS DI KOMENTAR', 540, 1340, a0 * ca, size=30, bg=ORANGE)
 
 # ------------------------------------------------------------ J: outro (36.6 - 42)
@@ -671,16 +671,16 @@ def gJ(cv, t):
 bb.DRAWERS = [gA, gB, gC, gD, gE, gF, gG, gJ]
 
 def build_sfx():
-    ev = [(0.0, 'whoosh'), (0.3, 'grind'), (1.6, 'grind'), (3.25, 'rumble'), (3.27, 'crack'), (3.35, 'buzzer'), (4.1, 'stamp'), (4.15, 'shine'), (4.2, 'ding'),
-          (4.45, 'pop'), (4.6, 'pop'), (4.75, 'pop'),
-          (5.5, 'whoosh'), (5.7, 'grind'), (6.0, 'pop'), (6.3, 'swish'), (6.35, 'card'), (6.5, 'rise'), (7.6, 'tick'), (8.0, 'zap2'), (8.4, 'pop'),
-          (9.0, 'grind'), (9.6, 'pop'), (9.9, 'zap'), (11.1, 'card'), (11.2, 'ding'),
+    ev = [(0.0, 'whoosh'), (0.3, 'grind'), (1.6, 'grind'), (3.85, 'rumble'), (3.87, 'crack'), (3.95, 'buzzer'), (4.45, 'stamp'), (4.5, 'shine'), (4.55, 'ding'),
+          (4.7, 'pop'), (4.85, 'pop'), (5.0, 'pop'),
+          (5.5, 'whoosh'), (5.7, 'grind'), (6.0, 'pop'), (6.3, 'swish'), (6.35, 'card'), (7.31, 'rise'), (8.1, 'tick'), (8.33, 'zap2'), (8.7, 'pop'),
+          (9.0, 'grind'), (9.7, 'pop'), (10.0, 'zap'), (10.97, 'card'), (11.05, 'ding'),
           (12.5, 'whoosh'), (12.62, 'clunk'), (13.0, 'clunk'), (13.1, 'pop'), (13.4, 'clunk'), (13.8, 'clunk'), (13.95, 'grind'), (14.5, 'ding_soft'), (14.55, 'pop'),
-          (14.7, 'clunk'), (15.05, 'clunk'), (15.4, 'clunk'), (15.55, 'grind'), (15.8, 'pop'), (16.1, 'ding_soft'), (16.3, 'clunk'), (16.6, 'clunk'), (16.9, 'clunk'),
-          (17.1, 'whoosh'), (17.6, 'rumble'), (17.7, 'pop'), (17.75, 'buzzer'), (18.75, 'pour'), (18.9, 'pop'), (19.4, 'pour'), (19.9, 'ding'), (20.0, 'stamp'),
-          (21.95, 'whoosh'), (22.0, 'card'), (22.2, 'pop'), (23.5, 'tick'), (25.8, 'pop'), (27.2, 'pop'), (27.25, 'ding_soft'),
-          (28.8, 'whoosh'), (29.0, 'pop'), (29.6, 'rise'), (31.2, 'pop'), (31.4, 'ding'), (30.9, 'card'),
-          (33.4, 'whoosh'), (33.5, 'shine'), (33.9, 'pop'), (34.15, 'pop'), (34.4, 'pop'), (34.65, 'pop'), (35.1, 'pop'),
+          (14.7, 'clunk'), (15.05, 'clunk'), (15.4, 'clunk'), (15.43, 'pop'), (15.55, 'grind'), (16.1, 'ding_soft'), (16.3, 'clunk'), (16.6, 'clunk'), (16.9, 'clunk'),
+          (17.1, 'whoosh'), (17.6, 'rumble'), (17.7, 'pop'), (17.75, 'buzzer'), (18.95, 'pour'), (19.0, 'pop'), (19.5, 'pour'), (20.7, 'ding'), (20.8, 'stamp'),
+          (21.95, 'whoosh'), (22.0, 'card'), (22.2, 'pop'), (23.7, 'tick'), (26.09, 'pop'), (27.12, 'pop'), (27.17, 'ding_soft'),
+          (28.8, 'whoosh'), (29.0, 'pop'), (30.2, 'rise'), (31.9, 'ding'), (32.1, 'pop'), (32.3, 'card'),
+          (33.4, 'whoosh'), (33.5, 'shine'), (33.9, 'pop'), (34.15, 'pop'), (34.4, 'pop'), (34.65, 'pop'), (35.26, 'pop'),
           (36.6, 'whoosh'), (36.75, 'boing'), (37.1, 'shine'), (37.35, 'pop')]
     return sorted(ev)
 
