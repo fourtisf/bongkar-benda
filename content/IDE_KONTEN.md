@@ -4,6 +4,8 @@
 - [x] Terowongan MRT, kok nggak ambruk? — EP02
 - [x] Jembatan Suramadu, kok nggak ambruk? — EP03
 - [ ] Pesawat, kok nggak kesetrum petir? — detail #2 (**rekomendasi EP04**)
+- [ ] Kapal feri, kok nggak tenggelam? — detail #8 (baru)
+- [ ] Gedung tertinggi Indonesia, kok nggak roboh kena gempa? — detail #9 (baru, perlu riset struktur)
 - [ ] Kereta cepat, kok bisa 350 km/jam? (Whoosh) — detail #3
 - [ ] Eskalator, kok tangganya nggak habis? — detail #4
 - [ ] Bendungan, kok nggak jebol? (Jatiluhur = urugan batu berinti tanah, bukan bendungan lengkung) — detail #5
@@ -75,4 +77,20 @@ Semua mengikuti pola yang menang: objek raksasa yang dilihat semua orang, hook b
 - **Sejarah:** cek saat riset (mis. jembatan cable-stayed modern pertama, Strömsund, Swedia, 1955).
 - **Fakta:** panjang total ±5.438 m, terpanjang di Indonesia saat dibangun; tipe cable-stayed; bentang utama 434 m diapit dua bentang 192 m; ruang bebas ±35 m di atas laut untuk kapal ([Auto2000](https://auto2000.co.id/berita-dan-tips/jembatan-nasional-suramadu), [ITS](https://www.its.ac.id/news/suramadu-jembatan-termegah-indonesia/), [Kedubes RRT, 2009](https://id.china-embassy.gov.cn/indo/sgdt/200904/t20090402_2039859.htm)). Tinggi menara belum terverifikasi, jangan dipakai dulu.
 - **Kenapa viral:** "jembatan" kategori dengan views tertinggi di genre ini (±1,8 jt di akun sejenis); Suramadu ikon nasional yang dikenal semua orang; penonton EP02 sudah disodori "jembatan!" di adegan komentar; visual kabel menyala + kapal lewat di bawah sangat sinematik.
+
+> **Pola hook yang terbukti (EP03 v2):** pengandaian bahaya dalam 1–2 detik pertama ("kalau tanpa X?") → benda runtuh/gagal → **REWIND ⏪** → bagian pentingnya menyala oranye → pertanyaan "kok bisa?" di ±3–4 detik. Kalimat hook maks. ±90 karakter.
+
+### 8. Kapal feri, kok nggak tenggelam? (baru)
+- **Hook:** "Kapal ini dari baja, beratnya ribuan ton. Kok nggak tenggelam?"
+  Visual: feri Merak–Bakauheni dibelah memanjang (truk & mobil di dek), lambung "bocor" → air masuk → kapal miring & tenggelam → REWIND ⏪ → rongga udara di lambung menyala oranye, kapal mengapung lagi.
+- **Alasan:** (1) lambung berisi rongga udara besar, jadi rata-rata massa jenis kapal lebih kecil dari air; (2) kapal memindahkan air sangat banyak → gaya dorong ke atas (Archimedes) sebanding beratnya; (3) lambung dibagi sekat kedap air, kalau satu ruang bocor yang lain tetap kering (cek detail sekat untuk feri).
+- **Sejarah:** Archimedes (±250 SM), prinsip gaya apung; atau garis muat Plimsoll (cek).
+- **Fakta:** [Gramedia: kenapa kapal tidak tenggelam](https://www.gramedia.com/literasi/kenapa-kapal-tidak-tenggelam/), [Detik: hukum Archimedes](https://www.detik.com/edu/detikpedia/d-6718670/hukum-archimedes-adalah-ini-bunyi-hingga-contoh-penerapannya). Data kapal feri Merak–Bakauheni (tonase, kapasitas) belum terverifikasi: cek ASDP.
+- **Kenapa viral:** kategori kapal ±641 rb views; jutaan orang pernah naik feri Merak–Bakauheni (mudik); pertanyaan "besi kok ngapung" klasik tapi visual dibelahnya jarang.
+
+### 9. Gedung tertinggi Indonesia, kok nggak roboh kena gempa? (baru)
+- **Hook:** "Gedung setinggi hampir 400 meter ini berdiri di negara yang sering gempa. Kok nggak roboh?"
+  Visual: Autograph Tower (Jakarta) dibelah, tanah berguncang → gedung bergoyang makin keras & retak → REWIND ⏪ → inti beton & pondasi menyala, goyangan teredam.
+- **Fakta:** Autograph Tower, Thamrin Nine, **382,9 m**, gedung tertinggi di Indonesia (data skyscrapercenter, rampung akhir 2022) ([Kontan](https://industri.kontan.co.id/news/autograph-tower-catat-rekor-sebagai-gedung-tertinggi-di-indonesia), [GNFI](https://www.goodnewsfromindonesia.id/2025/07/11/autograph-tower-representasi-gedung-tertinggi-di-indonesia)). **Sistem struktur & tahan gempanya belum terverifikasi** (core wall, outrigger, SNI 1726): wajib riset dokumen perancang/CTBUH sebelum produksi, atau bahas prinsip umum gedung tahan gempa tanpa klaim spesifik.
+- **Kenapa viral:** kategori gedung ±940 rb views; gempa topik yang dekat dengan semua orang Indonesia.
 
