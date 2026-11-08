@@ -140,10 +140,26 @@ def s_buzzer():
     return norm(lp(x, 2500), 0.45)
 def s_clock(): return s_pop(2200, 1800, 0.18)
 
+def s_grind(d=1.3, amp=0.42):
+    """gemuruh mesin bor terowongan: derau rendah + denyut gigi pemotong"""
+    t = tt(d); x = lp(rng.standard_normal(len(t)), 380, 4) * (0.65 + 0.35 * np.sin(2 * np.pi * 13 * t))
+    x += 0.35 * bp(rng.standard_normal(len(t)), 900, 2600) * (np.sin(2 * np.pi * 13 * t) > 0.6)
+    return norm(x * np.minimum(1, t / 0.12) * np.minimum(1, (d - t) / 0.3), amp)
+def s_rumble(d=1.1, amp=0.55):
+    """tanah runtuh: gemuruh rendah yang meluruh + kerikil berjatuhan"""
+    t = tt(d); x = lp(rng.standard_normal(len(t)), 160, 4) * np.exp(-t / 0.45)
+    c = s_crack(); c = np.pad(c, (0, max(0, len(t) - len(c))))[:len(t)]
+    x = norm(x) + 0.3 * norm(c)
+    return norm(x, amp)
+def s_pour(d=1.2, amp=0.22):
+    """semen/grout mengalir: derau pita tengah bergelombang"""
+    t = tt(d); x = bp(rng.standard_normal(len(t)), 250, 1400) * (0.6 + 0.4 * np.sin(2 * np.pi * 7 * t + 2 * np.sin(2 * np.pi * 1.3 * t)))
+    return norm(x * np.minimum(1, t / 0.15) * np.minimum(1, (d - t) / 0.4), amp)
+
 SFX = dict(beep=s_beep, go=s_go, buzzer=s_buzzer, clock=s_clock, clunk=s_clunk, heart=s_heart, stamp=s_stamp, blink=s_blink, whoosh=s_whoosh, swish=s_swish, zoom=s_zoom, plop=s_plop, pop=s_pop, tick=s_tick, chop=s_chop, crack=s_crack,
            fizz=s_fizz, fizz_soft=s_fizz_soft, rise=s_rise, sting=s_sting, plip=s_plip,
            zap=lambda: s_zap(True), zap2=lambda: s_zap(False), ding=s_ding, ding_soft=s_ding_soft, card=s_card,
-           boing=s_boing, shine=s_shine)
+           boing=s_boing, shine=s_shine, grind=s_grind, rumble=s_rumble, pour=s_pour)
 
 # ------------------------------------------------------------- music
 def midi(n): return 440 * 2 ** ((n - 69) / 12)
