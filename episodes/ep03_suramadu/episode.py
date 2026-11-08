@@ -13,19 +13,20 @@ from bb import (clamp, lerp, prog, eo, ei, eio, bo, bump, col, mixc, P, lg, rg, 
                INK, INK2, MUTED, ORANGE, ORANGE_D, YELLOW, RED, WHITE, text_c, mono, card, chip, label, check, logo_mark)
 from iso import Iso, tone, quad, box, shadow, poly, ring_pts
 
-bb.DUR = 47.67
-bb.TITLE = ('Jembatan Suramadu,', 'kok nggak ambruk?'); bb.TITLE_OUT = 6.1
-bb.GROUPS = [(0.0, 8.69, 'A'), (8.69, 15.88, 'B'), (15.88, 21.45, 'C'), (21.45, 27.01, 'D'), (27.01, 33.16, 'E'),
-             (33.16, 39.19, 'F'), (39.19, 42.47, 'G'), (42.47, 47.67, 'J')]
-bb.PHRASES = [(0.15, 'Bagian tengah [jembatan] ini'), (2.16, 'nggak punya [tiang] di bawahnya.'), (3.9, 'Cuma [digantung kabel],'), (5.33, 'di atas [laut].'),
-              (6.34, 'Kok nggak [ambruk]?'), (7.3, 'Ini [alasannya].'),
-              (8.69, '[Pertama],'), (9.59, '[kabel-kabel baja] ini'), (11.18, '[menarik] jalan ke arah menara.'), (12.69, 'Beratnya dibagi ke [banyak kabel] sekaligus.'),
+SH = -1.976                                                    # hook baru 1,976 dtk lebih pendek: adegan B..J digeser
+bb.DUR = 47.67 + SH
+bb.TITLE = ('Jembatan Suramadu,', 'kok nggak ambruk?'); bb.TITLE_OUT = 5.0
+_G = [(8.69, 15.88, 'B'), (15.88, 21.45, 'C'), (21.45, 27.01, 'D'), (27.01, 33.16, 'E'), (33.16, 39.19, 'F'), (39.19, 42.47, 'G'), (42.47, 47.67, 'J')]
+bb.GROUPS = [(0.0, 8.69 + SH, 'A')] + [(round(a_ + SH, 3), round(b_ + SH, 3), k) for a_, b_, k in _G]
+_PH0 = [(0.15, 'Tengah [jembatan] ini'), (1.88, 'nggak punya [tiang] sama sekali.'), (3.7, 'Kok nggak [ambruk] ke laut?'), (5.16, 'Ini [alasannya].')]
+_PH = [(8.69, '[Pertama],'), (9.59, '[kabel-kabel baja] ini'), (11.18, '[menarik] jalan ke arah menara.'), (12.69, 'Beratnya dibagi ke [banyak kabel] sekaligus.'),
               (15.88, '[Kedua],'), (16.61, 'menara meneruskan semua beban itu [ke bawah],'), (19.33, 'sampai ke [pondasi] di dasar laut.'),
               (21.45, '[Ketiga],'), (22.26, 'kabel di kiri dan kanan menara [saling mengimbangi].'), (25.21, 'Jadi menaranya [tetap tegak].'),
               (27.01, 'Idenya sudah digambar'), (28.3, '[Fausto Veranzio]'), (29.5, 'tahun [1595]:'), (30.83, 'jembatan yang [digantung rantai besi].'),
               (33.16, '[Suramadu] sendiri'), (34.33, 'panjangnya [lebih dari 5 km].'), (36.45, 'Dan di bawahnya,'), (37.51, '[kapal] masih bisa lewat.'),
               (39.19, 'Benda apa yang mau kamu [bongkar] berikutnya?'), (41.25, 'Tulis di [komentar]!'),
               (42.47, 'Follow [Bongkar Benda],'), (43.61, 'biar makin paham [cara kerja benda] di sekitarmu.')]
+bb.PHRASES = _PH0 + [(round(t_ + SH, 3), txt) for t_, txt in _PH]
 
 # ------------------------------------------------------------ dunia: laut yang dibelah + jembatan kabel
 WORLD = Iso(0, 0, 50)
@@ -94,8 +95,11 @@ def vcyl(cv, x, y, z0, z1, r, c, a, n=20):
     cv.drawPath(poly(ring_pts(WORLD, x, y, z1, r, axis='z', n=24)), P(col(tone(c, 0.25), a)))
 
 # ---- jembatan
+_HINGE = [0.0]                                                 # sudut runtuh (derajat), hanya untuk hook
 def deck_dz(x, sag):
-    return -sag * max(0.0, 1 - (x / PX) ** 2) if abs(x) < PX else 0.0
+    dz = -sag * max(0.0, 1 - (x / PX) ** 2) if abs(x) < PX else 0.0
+    if _HINGE[0] and abs(x) < PX: dz -= (PX - abs(x)) * math.tan(math.radians(_HINGE[0]))
+    return dz
 def pylon(cv, px, a, side, tilt=0.0, glow=0.0, comp=0.0, t=0.0):
     """menara H: kaki di y=+-LY. side='far' (kaki y<0 + balok silang) atau 'near' (kaki y>0)"""
     legs = [(-LY,)] if side == 'far' else [(LY,)]
@@ -144,11 +148,11 @@ def deck(cv, t, a, x0, x1, sag=0.0, crack=0.0):
             for _ in range(4): pts.append((pts[-1][0] + rnd.uniform(-0.3, 0.3), pts[-1][1] + DT / 4))
             sp = [P3(px_, DW + 0.01, pz + deck_dz(px_, sag)) for px_, pz in pts]
             cv.drawPath(poly(sp, False), P(col(RED, crack * a), stroke=4))
-def cables(cv, t, a, px, plane, sag=0.0, glow=None, sides=('main', 'back'), side_a=None):
+def cables(cv, t, a, px, plane, sag=0.0, glow=None, sides=('main', 'back'), side_a=None, cab_a=1.0):
     """kabel kipas dari menara px; plane y: -LY (belakang) atau +LY (depan); glow[(sisi,k)] 0..1"""
     for sd in sides:
         sgn = -1 if (sd == 'main') == (px > 0) else 1                     # bentang tengah ke arah x=0
-        aa = a * (side_a if (side_a is not None and sd == 'back') else 1.0)
+        aa = a * cab_a * (side_a if (side_a is not None and sd == 'back') else 1.0)
         if aa <= 0: continue
         for k, (d, hz) in enumerate(CK):
             xd = px + sgn * d; zd = DZ + deck_dz(xd, sag)
@@ -158,19 +162,19 @@ def cables(cv, t, a, px, plane, sag=0.0, glow=None, sides=('main', 'back'), side
             if g > 0: cv.drawLine(p0[0], p0[1], p1[0], p1[1], P(col(ORANGE, 0.55 * g * aa), stroke=10, blur=6))
             cv.drawLine(p0[0], p0[1], p1[0], p1[1], P(col(mixc(CABLE, ORANGE, g), aa), stroke=2.6 + 2.4 * g))
 def bridge(cv, t, a, sag=0.0, crack=0.0, glow=None, cars=True, x0=-SPAN_END - 2, x1=SPAN_END + 2, truck=None, side_a=None, pylons=(-PX, PX),
-           comp=0.0, piles=False, y_cut=None, extra=None):
+           comp=0.0, piles=False, y_cut=None, extra=None, cab_a=1.0):
     """urutan gambar: belakang -> depan (kabel & kaki belakang, dek, mobil, kaki & kabel depan)"""
     for px in pylons: pile_cap(cv, px, a, piles, y_cut)
     for x in (-SPAN_END, SPAN_END):
         if x0 <= x <= x1: end_pier(cv, x, a)
     for px in pylons:
-        cables(cv, t, a, px, -LY, sag, glow, side_a=side_a); pylon(cv, px, a, 'far', comp=comp, t=t)
+        cables(cv, t, a, px, -LY, sag, glow, side_a=side_a, cab_a=cab_a); pylon(cv, px, a, 'far', comp=comp, t=t)
     deck(cv, t, a, x0, x1, sag, crack)
     if cars: traffic(cv, t, a, x0, x1, sag)
     if truck is not None: truck_draw(cv, truck, 0.85, a, sag)
     if extra: extra()
     for px in pylons:
-        pylon(cv, px, a, 'near', comp=comp, t=t); cables(cv, t, a, px, LY, sag, glow, side_a=side_a)
+        pylon(cv, px, a, 'near', comp=comp, t=t); cables(cv, t, a, px, LY, sag, glow, side_a=side_a, cab_a=cab_a)
 
 def car3(cv, x, y, z, c, a, L=1.15):
     shadow(cv, WORLD, x, y - 0.3, z, L, 0.6, a, blur=4, k=0.3)
@@ -214,53 +218,79 @@ def scene(cv, t, a, sea=(-46.0, 46.0, -16.0, 12.0), ship_y=None, ship_x=-3.0, **
     if ship_y is not None and ship_y >= 0.3: ship(cv, t, ship_x, ship_y, a)
     sea_fronts(cv, x0, x1, y0, y1, a)
 
-# ------------------------------------------------------------ A: HOOK — bentang tengah tanpa tiang; dek melengkung; kabel menyala (0 - 8.69)
-T_SAG, T_SAVE = 6.34, 7.0
+# ------------------------------------------------------------ A: HOOK — tanpa tiang; kalau tanpa kabel dek jatuh ke laut; REWIND; kabel menyala (0 - 6.715)
+T_CUT, T_FALL, T_HIT, T_RW, T_BACK = 0.55, 0.75, 1.4, 1.95, 2.95
+HMAX = math.degrees(math.atan((DZ + 0.4) / PX))
+def hinge(t):
+    if t < T_FALL: return 0.0
+    if t < T_HIT: return HMAX * ei(prog(t, T_FALL, T_HIT))
+    if t < T_RW: return HMAX * (1 + 0.02 * math.sin((t - T_HIT) * 30) * (1 - prog(t, T_HIT, T_RW)))
+    return HMAX * (1 - eio(prog(t, T_RW, T_BACK)))
 def gA(cv, t):
-    u = eio(prog(t, 0.0, 3.8))
-    fw = (lerp(PX - 3.5, 2.0, u), 0.0, lerp(15.5, 8.2, u)); zoom = lerp(1.75, 0.62, u) * (1 + 0.025 * eio(prog(t, 3.8, 8.69)))
-    shk = (8 * math.sin(t * 50) * (1 - prog(t, T_SAG + 0.1, T_SAVE + 0.3))) if T_SAG < t < T_SAVE + 0.3 else 0.0
-    f = P3(*fw); sx, sy = 540 + shk, 980
-    sag = 2.2 * eo(prog(t, T_SAG, T_SAG + 0.45)) * (1 - bo(prog(t, T_SAVE, T_SAVE + 0.5), 2.2))
-    crack = prog(t, T_SAG + 0.15, T_SAG + 0.3) * (1 - prog(t, T_SAVE, T_SAVE + 0.3))
+    u = eio(prog(t, 0.0, 3.0))
+    fw = (lerp(0.0, 1.5, u), 0.0, lerp(6.0, 8.0, u)); zoom = lerp(1.0, 0.66, u) * (1 + 0.05 * eio(prog(t, 3.4, 6.7)))
+    impact = prog(t, T_HIT, T_HIT + 0.5)
+    shk = 14 * math.sin(t * 55) * (1 - impact) if T_HIT < t < T_HIT + 0.5 else 0.0
+    f = P3(*fw); sx, sy = 540 + shk, 980 + 0.6 * shk
+    cab_a = 1.0 if t < T_CUT else (1 - prog(t, T_CUT, T_CUT + 0.15) if t < T_RW else eo(prog(t, T_BACK - 0.35, T_BACK)))
     glow = {}
     for sd in ('main', 'back'):
         for k in range(8):
-            glow[(sd, k)] = eo(prog(t, T_SAVE + 0.04 * k, T_SAVE + 0.04 * k + 0.25)) * (1 - 0.75 * prog(t, 7.9, 8.6))
-    gl = (3.9 < t < 5.3)                                                  # kilau putih menyusuri kabel saat "cuma digantung kabel"
+            glow[(sd, k)] = eo(prog(t, T_BACK - 0.3 + 0.04 * k, T_BACK - 0.05 + 0.04 * k)) * (1 - 0.7 * prog(t, 4.6, 5.6))
+    _HINGE[0] = hinge(t)
     cv.save(); cam(cv, f[0], f[1], zoom, sx, sy)
-    scene(cv, t, 1.0, sea=(-21.0, 25.0, -11.0, 6.0), ship_y=lerp(-9.5, 4.5, prog(t, 0.0, 8.69)), sag=sag, crack=crack, glow=glow, x0=-21.0, x1=25.0)
-    if gl:
+    scene(cv, t, 1.0, sea=(-21.0, 25.0, -11.0, 6.0), ship_y=lerp(-9.5, -4.5, prog(t, 0.0, 6.7)), glow=glow, x0=-21.0, x1=25.0, cab_a=cab_a)
+    _HINGE[0] = 0.0
+    if T_CUT - 0.05 < t < T_CUT + 0.5:                                   # kabel "dilepas": kilat merah putus-putus
+        ga = bump(prog(t, T_CUT - 0.05, T_CUT + 0.5))
         for px in (-PX, PX):
-            for k, (d, hz) in enumerate(CK):
+            for d, hz in CK:
                 for sgn in (-1, 1):
-                    q = (t - 3.9 - 0.06 * k) / 0.9
-                    if 0 < q < 1:
-                        pa, pb = P3(px, LY, hz), P3(px + sgn * d, DW, DZ)
-                        q1 = min(1.0, q + 0.18); x_, y_ = lerp(pa[0], pb[0], q), lerp(pa[1], pb[1], q); x2, y2 = lerp(pa[0], pb[0], q1), lerp(pa[1], pb[1], q1)
-                        cv.drawLine(x_, y_, x2, y2, P(col(WHITE, 0.95 * bump(q)), stroke=6))
-    gh = eo(prog(t, 2.16, 2.5)) * (1 - prog(t, 3.7, 4.0))                  # tiang bayangan + silang merah
+                    p0, p1 = P3(px, LY, hz), P3(px + sgn * d, DW, DZ)
+                    cv.drawLine(p0[0], p0[1], p1[0], p1[1], P(col(RED, 0.8 * ga), stroke=3, effect=skia.DashPathEffect.Make([10, 8], t * 60)))
+    if T_HIT - 0.05 < t < T_HIT + 0.9:                                   # cipratan besar di tengah + riak melingkar
+        q = prog(t, T_HIT - 0.05, T_HIT + 0.9); rnd = random.Random(9)
+        c_ = P3(0, 0, 0); cv.drawCircle(c_[0], c_[1] - 40, 160 * eo(q), P(col(WHITE, 0.55 * (1 - q) ** 2), blur=30))
+        for k in range(34):
+            ang = rnd.uniform(-math.pi * 0.97, -math.pi * 0.03); L = rnd.uniform(90, 300) * eo(q); c0 = P3(rnd.uniform(-1.8, 1.8), rnd.uniform(-1.8, 1.8), 0)
+            x1_, y1_ = c0[0] + math.cos(ang) * L, c0[1] + math.sin(ang) * L * 1.4 + 220 * q * q
+            cv.drawLine(c0[0] + math.cos(ang) * L * 0.35, c0[1] + math.sin(ang) * L * 0.45, x1_, y1_, P(col(WHITE, 0.95 * (1 - q)), stroke=7))
+        for k in range(3):
+            rq = clamp(q * 1.4 - k * 0.2)
+            if 0 < rq < 1: cv.drawPath(poly(ring_pts(WORLD, 0, 0, 0.02, 1.5 + 9 * rq, axis='z', n=48)), P(col(WHITE, 0.7 * (1 - rq)), stroke=4))
+    gh = eo(prog(t, 0.12, 0.3)) * (1 - prog(t, T_FALL, T_FALL + 0.25))   # tiang bayangan + silang merah
     if gh > 0:
         for yy in (-1.2, 1.2):
-            q = quad(cv, WORLD, [(-0.5, yy, 0), (0.5, yy, 0), (0.5, yy, DZ - DT), (-0.5, yy, DZ - DT)], WHITE, 0.25 * gh)
-            cv.drawPath(q, P(col(NAVY, 0.8 * gh), stroke=3, effect=skia.DashPathEffect.Make([12, 8], 0)))
-        p = P3(0, 0, (DZ - DT) / 2); s = 70 * eo(prog(t, 2.3, 2.6))
-        cv.drawLine(p[0] - s, p[1] - s, p[0] + s, p[1] + s, P(col(RED, gh), stroke=12)); cv.drawLine(p[0] - s, p[1] + s, p[0] + s, p[1] - s, P(col(RED, gh), stroke=12))
+            qd = quad(cv, WORLD, [(-0.5, yy, 0), (0.5, yy, 0), (0.5, yy, DZ - DT), (-0.5, yy, DZ - DT)], WHITE, 0.25 * gh)
+            cv.drawPath(qd, P(col(NAVY, 0.8 * gh), stroke=3, effect=skia.DashPathEffect.Make([12, 8], 0)))
+        p = P3(0, 0, (DZ - DT) / 2); s_ = 70 * eo(prog(t, 0.15, 0.35))
+        cv.drawLine(p[0] - s_, p[1] - s_, p[0] + s_, p[1] + s_, P(col(RED, gh), stroke=12)); cv.drawLine(p[0] - s_, p[1] + s_, p[0] + s_, p[1] - s_, P(col(RED, gh), stroke=12))
     cv.restore()
     ta = 1 - eio(prog(t, bb.TITLE_OUT - 0.4, bb.TITLE_OUT))
     if ta > 0: cv.drawRect(skia.Rect(0, 0, 1080, 560), P(shader=lg(0, 380, 0, 600, [col(bb.BG0, ta), col(bb.BG0, 0)])))
-    if 2.2 < t < 4.0: chip(cv, 'TANPA TIANG', 540, 560, eo(prog(t, 2.25, 2.5)) * (1 - prog(t, 3.7, 4.0)), size=30, bg=INK)
-    fl = prog(t, T_SAG, T_SAG + 0.35)
-    if 0 < fl < 1: cv.drawRect(skia.Rect(0, 0, 1080, 1920), P(col(RED, 0.25 * (1 - fl))))
-    if T_SAG < t < T_SAVE + 0.3: cv.drawRect(skia.Rect(0, 0, 1080, 1920), P(col(RED, 0.06 * (1 - prog(t, T_SAVE, T_SAVE + 0.3)))))
-    if T_SAG + 0.05 < t < T_SAVE + 0.35: chip(cv, 'AMBRUK?', 540, 560, eo(prog(t, T_SAG + 0.05, T_SAG + 0.25)) * (1 - prog(t, T_SAVE + 0.1, T_SAVE + 0.35)), size=32, bg=RED)
-    if t > T_SAVE:
+    fl = max(bump(prog(t, T_CUT, T_CUT + 0.3)), bump(prog(t, T_HIT, T_HIT + 0.35)))
+    if fl > 0: cv.drawRect(skia.Rect(0, 0, 1080, 1920), P(col(RED, 0.22 * fl)))
+    if 0.12 < t < T_CUT + 0.05: chip(cv, 'TANPA TIANG', 540, 560, eo(prog(t, 0.12, 0.3)) * (1 - prog(t, T_CUT - 0.1, T_CUT + 0.05)), size=30, bg=INK)
+    if T_CUT < t < T_RW + 0.1: chip(cv, 'KALAU TANPA KABEL?', 540, 560, eo(prog(t, T_CUT, T_CUT + 0.15)) * (1 - prog(t, T_RW - 0.1, T_RW + 0.1)), size=30, bg=RED)
+    rw = prog(t, T_RW, T_BACK + 0.1)
+    if 0 < rw < 1:                                                        # efek REWIND: garis pindai + ikon mundur
+        ra = bump(rw) * 1.3
+        cv.drawRect(skia.Rect(0, 0, 1080, 1920), P(col(bb.BG0, 0.14 * clamp(ra))))
+        for k in range(14):
+            yy = (k * 151 + t * 2400) % 1920; cv.drawRect(skia.Rect(0, yy, 1080, yy + 5), P(col(WHITE, 0.35 * clamp(ra))))
+        r = skia.Rect(400, 520, 680, 600); cv.drawRoundRect(r, 40, 40, P(col(INK, clamp(ra))))
+        for k in range(2):
+            x0_ = 470 + k * 44; tri = skia.Path(); tri.moveTo(x0_, 560); tri.lineTo(x0_ + 38, 536); tri.lineTo(x0_ + 38, 584); tri.close(); cv.drawPath(tri, P(col(WHITE, clamp(ra))))
+        f_ = font(MONO, 26); cv.drawString('ULANG', 570, bl(f_, 560), f_, P(col(WHITE, clamp(ra))))
+    if t > T_BACK:
         p = scr(P3(PX - CK[5][0] * 0.5, LY, lerp(CK[5][1], DZ, 0.5)), f, zoom, sx, sy)
-        la = eo(prog(t, T_SAVE + 0.05, T_SAVE + 0.4)) * (1 - prog(t, 8.4, 8.69))
+        la = eo(prog(t, T_BACK + 0.05, T_BACK + 0.4)) * (1 - prog(t, 6.4, 6.7))
         label(cv, 'KABEL BAJA', p[0], p[1], 830, 600, la, sub='menahan jalan')
-        check(cv, 975, 535, 26, prog(t, T_SAVE + 0.15, T_SAVE + 0.55), la)
+        check(cv, 975, 535, 26, prog(t, T_BACK + 0.15, T_BACK + 0.55), la)
+    ca = eo(prog(t, 3.7, 4.0)) * (1 - prog(t, 5.0, 5.2))
+    if ca > 0: chip(cv, 'KOK BISA?', 540, 1340, ca, size=32, bg=ORANGE)
     for k, (num, txt) in enumerate((('1', 'KABEL BAJA'), ('2', 'MENARA'), ('3', 'SEIMBANG'))):
-        q = prog(t, 7.4 + 0.15 * k, 7.7 + 0.15 * k)
+        q = prog(t, 5.25 + 0.15 * k, 5.55 + 0.15 * k)
         if q > 0:
             x = 200 + k * 340; s_ = lerp(0.6, 1, bo(q)); aa = clamp(q * 3)
             cv.save(); cv.translate(x, 1335); cv.scale(s_, s_); cv.translate(-x, -1335)
@@ -523,19 +553,20 @@ def gJ(cv, t):
         cv.save(); cv.translate(540, 1200); cv.scale(press, press); cv.translate(-540, -1200)
         chip(cv, 'Follow', 540, 1200, clamp(ba * 1.5), size=44, bg=ORANGE, pad=56); cv.restore()
 
-bb.DRAWERS = [gA, gB, gC, gD, gE, gF, gG, gJ]
+def _shift(fn): return lambda cv, t: fn(cv, t - SH)
+bb.DRAWERS = [gA] + [_shift(g) for g in (gB, gC, gD, gE, gF, gG, gJ)]
 
 def build_sfx():
-    ev = [(0.0, 'whoosh'), (0.4, 'swish'), (2.16, 'buzzer'), (2.3, 'pop'), (3.9, 'shine'), (5.33, 'swish'),
-          (6.34, 'rumble'), (6.36, 'crack'), (6.45, 'buzzer'), (7.0, 'zap'), (7.05, 'stamp'), (7.2, 'shine'), (7.25, 'ding'),
-          (7.4, 'pop'), (7.55, 'pop'), (7.7, 'pop'),
-          (8.69, 'whoosh'), (9.0, 'grind'), (9.59, 'pop'), (10.0, 'tick'), (11.18, 'zap2'), (11.3, 'pop'), (12.69, 'rise'), (13.0, 'ding_soft'), (13.3, 'pop'),
+    hook = [(0.0, 'whoosh'), (0.15, 'pop'), (0.2, 'buzzer'), (0.55, 'zap2'), (0.6, 'buzzer'), (0.75, 'crack'), (0.8, 'rumble'), (1.4, 'splash'), (1.45, 'rumble'),
+            (1.95, 'rewind'), (2.65, 'zap'), (2.7, 'shine'), (3.0, 'stamp'), (3.05, 'ding'), (3.7, 'swish'), (3.75, 'pop'), (5.25, 'pop'), (5.4, 'pop'), (5.55, 'pop')]
+    rest = [(8.69, 'whoosh'), (9.0, 'grind'), (9.59, 'pop'), (10.0, 'tick'), (11.18, 'zap2'), (11.3, 'pop'), (12.69, 'rise'), (13.0, 'ding_soft'), (13.3, 'pop'),
           (15.88, 'whoosh'), (16.61, 'clunk'), (16.7, 'pop'), (17.4, 'pop'), (18.0, 'swish'), (19.33, 'clunk'), (19.4, 'pop'), (19.5, 'ding_soft'),
           (21.45, 'whoosh'), (22.26, 'zap'), (22.3, 'pop'), (22.9, 'buzzer'), (24.2, 'swish'), (24.6, 'card'), (25.21, 'ding'), (25.3, 'stamp'),
           (27.01, 'whoosh'), (27.05, 'card'), (28.3, 'pop'), (29.5, 'tick'), (30.83, 'pop'), (30.9, 'ding_soft'),
           (33.16, 'whoosh'), (33.4, 'card'), (34.33, 'rise'), (34.6, 'pop'), (35.6, 'ding'), (36.2, 'zoom'), (37.51, 'rise'), (37.9, 'pop'), (38.4, 'ding'),
           (39.19, 'whoosh'), (39.3, 'shine'), (39.6, 'pop'), (39.85, 'pop'), (40.1, 'pop'), (40.35, 'pop'), (41.25, 'pop'),
           (42.47, 'whoosh'), (42.62, 'boing'), (42.97, 'shine'), (43.22, 'pop')]
+    ev = hook + [(round(t_ + SH, 3), k) for t_, k in rest]
     return sorted(ev)
 
 if __name__ == '__main__': bb.main()

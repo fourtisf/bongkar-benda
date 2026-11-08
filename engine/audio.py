@@ -156,10 +156,21 @@ def s_pour(d=1.2, amp=0.22):
     t = tt(d); x = bp(rng.standard_normal(len(t)), 250, 1400) * (0.6 + 0.4 * np.sin(2 * np.pi * 7 * t + 2 * np.sin(2 * np.pi * 1.3 * t)))
     return norm(x * np.minimum(1, t / 0.15) * np.minimum(1, (d - t) / 0.4), amp)
 
+def s_splash(d=1.2, amp=0.6):
+    """benda besar jatuh ke air: dentum rendah + semburan derau yang meluruh"""
+    t = tt(d); x = 0.8 * chirp(110, 45, d, 0.5) * np.exp(-t / 0.18)
+    x += norm(bp(rng.standard_normal(len(t)), 500, 5000) * np.exp(-t / 0.35)) * 0.7
+    return norm(x, amp)
+def s_rewind(d=0.9, amp=0.35):
+    """pita diputar mundur: nada naik-turun cepat bergetar"""
+    t = tt(d); f = 500 + 900 * (t / d) ** 1.5
+    x = np.sin(2 * np.pi * np.cumsum(f) / SR) * (0.6 + 0.4 * np.sin(2 * np.pi * 18 * t)) + 0.25 * bp(rng.standard_normal(len(t)), 2000, 7000)
+    return norm(x * np.minimum(1, t / 0.05) * np.minimum(1, (d - t) / 0.1), amp)
+
 SFX = dict(beep=s_beep, go=s_go, buzzer=s_buzzer, clock=s_clock, clunk=s_clunk, heart=s_heart, stamp=s_stamp, blink=s_blink, whoosh=s_whoosh, swish=s_swish, zoom=s_zoom, plop=s_plop, pop=s_pop, tick=s_tick, chop=s_chop, crack=s_crack,
            fizz=s_fizz, fizz_soft=s_fizz_soft, rise=s_rise, sting=s_sting, plip=s_plip,
            zap=lambda: s_zap(True), zap2=lambda: s_zap(False), ding=s_ding, ding_soft=s_ding_soft, card=s_card,
-           boing=s_boing, shine=s_shine, grind=s_grind, rumble=s_rumble, pour=s_pour)
+           boing=s_boing, shine=s_shine, grind=s_grind, rumble=s_rumble, pour=s_pour, splash=s_splash, rewind=s_rewind)
 
 # ------------------------------------------------------------- music
 def midi(n): return 440 * 2 ** ((n - 69) / 12)

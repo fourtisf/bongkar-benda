@@ -2,55 +2,55 @@
  {
   "i": 0,
   "anchor": 0.15,
-  "text": "Bagian tengah jembatan ini nggak punya tiang di bawahnya. Cuma digantung kabel, di atas laut. Kok nggak ambruk? Ini alasannya.",
+  "text": "Tengah jembatan ini nggak punya tiang sama sekali. Kok nggak ambruk ke laut? Ini alasannya.",
   "file": "vo/l00.wav",
-  "dur": 8.191
+  "dur": 6.215
  },
  {
   "i": 1,
-  "anchor": 8.69,
+  "anchor": 6.715,
   "text": "Pertama, kabel-kabel baja ini menarik jalan ke arah menara. Beratnya dibagi ke banyak kabel sekaligus.",
   "file": "vo/l01.wav",
   "dur": 6.838
  },
  {
   "i": 2,
-  "anchor": 15.88,
+  "anchor": 13.903,
   "text": "Kedua, menara meneruskan semua beban itu ke bawah, sampai ke pondasi di dasar laut.",
   "file": "vo/l02.wav",
   "dur": 5.223
  },
  {
   "i": 3,
-  "anchor": 21.45,
+  "anchor": 19.476,
   "text": "Ketiga, kabel di kiri dan kanan menara saling mengimbangi. Jadi menaranya tetap tegak.",
   "file": "vo/l03.wav",
   "dur": 5.208
  },
  {
   "i": 4,
-  "anchor": 27.01,
+  "anchor": 25.034,
   "text": "Idenya sudah digambar Fausto Veranzio tahun lima belas sembilan puluh lima: jembatan yang digantung rantai besi.",
   "file": "vo/l04.wav",
   "dur": 5.804
  },
  {
   "i": 5,
-  "anchor": 33.16,
+  "anchor": 31.188,
   "text": "Suramadu sendiri panjangnya lebih dari lima kilometer. Dan di bawahnya, kapal masih bisa lewat.",
   "file": "vo/l05.wav",
   "dur": 5.676
  },
  {
   "i": 6,
-  "anchor": 39.19,
+  "anchor": 37.214,
   "text": "Benda apa yang mau kamu bongkar berikutnya? Tulis di komentar!",
   "file": "vo/l06.wav",
   "dur": 2.931
  },
  {
   "i": 7,
-  "anchor": 42.47,
+  "anchor": 40.495,
   "text": "Follow Bongkar Benda, biar makin paham cara kerja benda di sekitarmu.",
   "file": "vo/l07.wav",
   "dur": 3.713
