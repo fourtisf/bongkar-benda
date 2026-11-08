@@ -2,6 +2,12 @@
 
 Status: **visual siap**, menunggu suara (Gemini TTS) → `videos/bongkar-benda-ep02_mrt.mp4` + `_tanpa-musik`.
 
+### Sisa pekerjaan (untuk sesi berikutnya)
+1. `cd episodes/ep02_mrt && ./voice.sh` (butuh `GEMINI_API_KEY`; key AI Studio baru berawalan `AQ.` itu normal), lalu `python3 ../../tools/transcribe.py .` dari root: `python3 tools/transcribe.py episodes/ep02_mrt`. Cek "Marc Brunel" dan "Thames" terbaca benar.
+2. Sesuaikan `ANCHORS` di `vo.py` sebanding durasi `vo/lines.json` (pertahankan urutan adegan & `bb.GROUPS`), lalu cari jeda tiap baris untuk waktu `bb.PHRASES` di `episode.py` (saat ini masih perkiraan).
+3. `python3 episode.py preview ...` → `./build.sh` → QA: `tools/sheet.py`, loudness ±−14 LUFS, `tools/mixcheck.py`.
+4. Update status file ini + `IDE_KONTEN.md` ([x] EP02), commit, push, kirim video.
+
 ## Fakta & sumber
 - **Mesin bor terowongan (TBM) jenis Earth Pressure Balance (EPB):** tanah hasil galian mengisi ruang di belakang kepala bor dan ditekan untuk menahan muka galian; kecepatan ulir pembuang (screw conveyor) dan laju maju diatur supaya tekanannya seimbang dengan tekanan tanah & air, sehingga permukaan tanah tidak turun ([Master Builders Solutions](https://blog.master-builders-solutions.com/en/earth-pressure-balance), [eMetro](https://www.emetro.gr/?p=4360), [Robbins](https://www.robbinstbm.com/wp-content/uploads/2017/05/EPB6-7m_March.27.2017.pdf)).
 - **Segmen beton:** lengan pemasang (erector) menaruh segmen pracetak satu per satu sampai jadi cincin di ekor perisai; dongkrak pendorong bertumpu pada cincin terakhir untuk mendorong mesin maju (sumber yang sama).
