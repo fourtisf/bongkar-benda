@@ -44,10 +44,10 @@ def focus(x, y, z): return P3(x, y, z)
 def shaft(cv, a=1.0, doors=True):
     box(cv, WORLD, -0.35, -0.35, Z_PIT - 0.2, 0.35, SH_Y + 0.35, Z_TOP - Z_PIT + 0.2, CONCRETE, a, top=0.3, left=0.12, right=-0.06, hi=False)
     box(cv, WORLD, 0.0, -0.35, Z_PIT - 0.2, SH_X, 0.35, Z_TOP - Z_PIT + 0.2, CONCRETE, a, top=0.3, left=0.02, right=-0.18, hi=False)
-    box(cv, WORLD, 0.0, 0.0, Z_PIT - 0.25, SH_X, SH_Y, 0.05, '#C2CBD8', a, top=0.0, hi=False)
+    box(cv, WORLD, 0.0, 0.0, Z_PIT - 0.25, SH_X, SH_Y, 0.05, '#D9CABB', a, top=0.0, hi=False)
     for zf in (0.0, 4.0, 8.0):
         for (p0, p1) in (((0, 0, zf - 0.08), (SH_X, 0, zf - 0.08)), ((0, 0, zf - 0.08), (0, SH_Y, zf - 0.08))):
-            (x0, y0), (x1, y1) = P3(*p0), P3(*p1); cv.drawLine(x0, y0, x1, y1, P(col('#AEB9CA', a), stroke=3))
+            (x0, y0), (x1, y1) = P3(*p0), P3(*p1); cv.drawLine(x0, y0, x1, y1, P(col('#CDBBA9', a), stroke=3))
         if doors:
             quad(cv, WORLD, [(0, 1.15, zf), (0, 2.45, zf), (0, 2.45, zf + 2.35), (0, 1.15, zf + 2.35)], '#9AA7BB', a, edge='#6B7A93', ew=2)
             quad(cv, WORLD, [(0, 1.25, zf), (0, 1.79, zf), (0, 1.79, zf + 2.25), (0, 1.25, zf + 2.25)], '#C9D2DF', a)
@@ -63,7 +63,7 @@ def rails(cv, a, side):
 def counterweight(cv, z, a=1.0, glow=0.0):
     if glow > 0:
         x0, y0 = P3(1.4, 0.4, z + 2.1); x1, y1 = P3(2.8, 0.4, z - 0.1)
-        cv.drawRect(skia.Rect(min(x0, x1) - 20, y0 - 20, max(x0, x1) + 20, y1 + 20), P(col(TEAL, 0.45 * glow * a), blur=26))
+        cv.drawRect(skia.Rect(min(x0, x1) - 20, y0 - 20, max(x0, x1) + 20, y1 + 20), P(col(ORANGE, 0.40 * glow * a), blur=26))
     box(cv, WORLD, 1.4, 0.2, z, 1.4, 0.4, 2.0, '#5E6A80', a)
     for k in range(1, 6):
         (x0, y0), (x1, y1) = P3(1.4, 0.6, z + k * 0.33), P3(2.8, 0.6, z + k * 0.33); cv.drawLine(x0, y0, x1, y1, P(col('#3B4558', a), stroke=2))
@@ -141,11 +141,11 @@ def machine(cv, ang, a=1.0, glow_motor=0.0):
     for yy in (0.5, 1.95): box(cv, WORLD, -0.2, yy - 0.12, Z_TOP - 0.25, SH_X + 0.4, 0.24, 0.25, '#6C7A90', a, hi=False)
     wheel(cv, WORLD, 1.75, 2.45, 1.15, SHEAVE_Z, SHEAVE_R, '#9AA6BA', a, ang=ang, spokes=6, groove=4)
     if glow_motor > 0:
-        x, y = P3(3.1, 1.15, 12.8); cv.drawCircle(x, y, 70, P(col(TEAL, 0.5 * glow_motor * a), blur=26))
-    box(cv, WORLD, 2.6, 0.78, Z_TOP + 0.22, 1.0, 0.75, 0.8, '#3E6FB5', a)
-    wheel(cv, WORLD, 3.6, 3.75, 1.15, 12.62, 0.3, '#2F5A96', a, ang=ang * 2.5, spokes=4)
+        x, y = P3(3.1, 1.15, 12.8); cv.drawCircle(x, y, 70, P(col(ORANGE, 0.45 * glow_motor * a), blur=26))
+    box(cv, WORLD, 2.6, 0.78, Z_TOP + 0.22, 1.0, 0.75, 0.8, '#2A3F6B', a)
+    wheel(cv, WORLD, 3.6, 3.75, 1.15, 12.62, 0.3, '#14213D', a, ang=ang * 2.5, spokes=4)
     for k in range(4):
-        (x0, y0), (x1, y1) = P3(2.7 + k * 0.22, 1.53, Z_TOP + 0.35), P3(2.7 + k * 0.22, 1.53, Z_TOP + 0.9); cv.drawLine(x0, y0, x1, y1, P(col('#2A4E86', a), stroke=3))
+        (x0, y0), (x1, y1) = P3(2.7 + k * 0.22, 1.53, Z_TOP + 0.35), P3(2.7 + k * 0.22, 1.53, Z_TOP + 0.9); cv.drawLine(x0, y0, x1, y1, P(col('#0E1830', a), stroke=3))
 
 def buffers(cv, comp=0.0, a=1.0):
     for (x, y, h, r, main_) in ((2.1, 0.4, 0.7, 0.18, False), (1.3, 2.45, 1.0, 0.22, True), (2.9, 2.45, 1.0, 0.22, True)):
@@ -267,15 +267,15 @@ def gC(cv, t):
     cv.restore()
     sc = lambda p: (470 + (p[0] - fx) * 1.45, 860 + (p[1] - fy) * 1.45)
     l1 = eo(prog(t, 13.65, 14.1))
-    if l1 > 0: x, y = sc(cw); label(cv, 'BEBAN PENYEIMBANG', x, y, 800, 860, a0 * l1, dot=TEAL, size=26, sub='≈ kabin + 40–50% muatan')
+    if l1 > 0: x, y = sc(cw); label(cv, 'BEBAN PENYEIMBANG', x, y, 800, 860, a0 * l1, dot=INK, size=26, sub='≈ kabin + 40–50% muatan')
     l2 = eo(prog(t, 15.2, 15.6))
-    if l2 > 0: x, y = sc(mo); label(cv, 'MESIN', x, y, 850, 330, a0 * l2, dot=TEAL, size=26, sub='kerja lebih ringan')
+    if l2 > 0: x, y = sc(mo); label(cv, 'MESIN', x, y, 850, 330, a0 * l2, dot=INK, size=26, sub='kerja lebih ringan')
     for k, (ax, lab_) in enumerate(((240, 'KABIN NAIK'), (700, 'PENYEIMBANG TURUN'))):
         aa = a0 * eo(prog(t, 13.4, 13.8)) * (1 - prog(t, 16.6, 16.9))
         if aa > 0:
-            yb = 1345; d = -1 if k == 0 else 1; off = 10 * math.sin(t * 6)
+            yb = 1345; d = 1 if k == 0 else -1; off = 10 * math.sin(t * 6)
             pth = skia.Path(); pth.moveTo(ax - 18, yb - d * 10 + off * d); pth.lineTo(ax, yb - d * 34 + off * d); pth.lineTo(ax + 18, yb - d * 10 + off * d)
-            cv.drawPath(pth, P(col(TEAL if k else ORANGE, aa), stroke=7)); text_c(cv, lab_, ax + (130 if k == 0 else 150), yb - 20, 22, INK2, aa, f=B)
+            cv.drawPath(pth, P(col(INK if k else ORANGE, aa), stroke=7)); text_c(cv, lab_, ax + (130 if k == 0 else 150), yb - 20, 22, INK2, aa, f=B, halo=1.0)
 
 # ------------------------------------------------------------ D: rem darurat: kelewat cepat -> mencengkeram rel -> berhenti (17.0 - 22.76)
 def speed_dial(cv, cx, cy, r, v, a, t, alarm=0.0):
@@ -325,7 +325,7 @@ def gD(cv, t):
         sx, sy = 540 + (gpt[0] - fx) * zoom, 900 + (gpt[1] - fy) * zoom
         label(cv, 'MENCENGKERAM REL', sx, sy, 560, 400, a0 * la, sub='rem jepit (safety gear)')
     ba = eo(prog(t, 21.61, 21.9))
-    if ba > 0: chip(cv, 'BERHENTI', 540, 1335, a0 * ba, size=30, bg=TEAL)
+    if ba > 0: chip(cv, 'BERHENTI', 540, 1335, a0 * ba, size=30, bg=ORANGE)
 
 # ------------------------------------------------------------ E: Elisha Otis 1854: tali dipotong, lift cuma turun sedikit lalu tertahan (22.76 - 30.34)
 SEPIA, SEPIA_D, SEPIA_INK = '#F3E6CC', '#E2CFA8', '#6B4A2B'
@@ -393,7 +393,7 @@ def gE(cv, t):
     if t > 28.28:
         aa = eo(prog(t, 28.28, 28.6)); chip(cv, 'CUMA TURUN SEDIKIT', 540, 1355, a0 * aa * (1 - prog(t, 29.1, 29.3)), size=26, bg=INK)
     ta = eo(prog(t, 29.23, 29.5))
-    if ta > 0: chip(cv, 'TERTAHAN!', 540, 1355, a0 * ta, size=30, bg=TEAL)
+    if ta > 0: chip(cv, 'TERTAHAN!', 540, 1355, a0 * ta, size=30, bg=ORANGE)
 
 # ------------------------------------------------------------ F: peredam kejut di dasar lubang lift (30.34 - 33.72)
 def gF(cv, t):
@@ -411,7 +411,7 @@ def gF(cv, t):
     if t > 30.5: chip(cv, 'LAPISAN TERAKHIR', 540, 330, a0 * eo(prog(t, 30.5, 30.8)), size=26, bg=INK)
 
 # ------------------------------------------------------------ G: bongkar apa lagi? tulis di komentar (33.72 - 36.6)
-CMTS = [('eskalator!', 280, 760, 34.2, ORANGE), ('kereta cepat dong', 750, 900, 34.45, TEAL), ('kapal selam pls', 310, 1040, 34.7, SKY), ('bendungan!!', 760, 1180, 34.95, '#8B5CF6')]
+CMTS = [('eskalator!', 280, 760, 34.2, ORANGE), ('kereta cepat dong', 750, 900, 34.45, INK), ('kapal selam pls', 310, 1040, 34.7, ORANGE_D), ('bendungan!!', 760, 1180, 34.95, '#2A3F6B')]
 def gG(cv, t):
     a0 = eo(prog(t, 33.72, 34.0))
     logo_mark(cv, 540, 430, 80 * lerp(0.6, 1, bo(prog(t, 33.72, 34.1))), a0, t)

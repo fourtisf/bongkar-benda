@@ -12,10 +12,13 @@ ENGINE = os.path.dirname(os.path.abspath(__file__)); FD = os.path.join(ENGINE, '
 EP = os.getcwd()
 
 # ------------------------------------------------------------ palet brand (lihat BRAND.md)
-BG0, BG1 = '#F6F8FC', '#DCE4EF'
+BG0, BG1 = '#FFF8F1', '#F8E2CE'          # krem hangat (sisi kiri kubus logo)
+CREAM, CREAM_D = '#FFE9D4', '#FFD3AC'
 INK, INK2, MUTED = '#14213D', '#2C3E5F', '#6B7A93'
 ORANGE, ORANGE_D, TEAL, YELLOW, RED, SKY, WHITE = '#FF7A1A', '#E0600A', '#12B3A3', '#FFC23C', '#EF4136', '#4F9DFF', '#FFFFFF'
-STEEL, STEEL_D, CONCRETE = '#8E9AAF', '#4A5568', '#D3DAE5'
+# warna adegan = warna logo: oranye (sorotan), navy (struktur/info), krem & putih (latar/kartu). Merah hanya bahaya, kuning hanya percikan.
+# TEAL/SKY tidak ada di logo: jangan dipakai di episode baru.
+STEEL, STEEL_D, CONCRETE = '#8E9AAF', '#4A5568', '#EADFD3'   # baja abu-navy, beton krem (permukaan terang = hangat seperti logo)
 
 # ------------------------------------------------------------ util (sama dengan mesin Ruang Pikir)
 def clamp(x, a=0.0, b=1.0): return a if x < a else b if x > b else x
@@ -71,7 +74,7 @@ def mono(cv, s, cx, cy, size, c=INK, a=1.0, sp=2.0, align=0.5):
     f = font(MONO, size); w = sum(f.measureText(ch) + sp for ch in s) - sp; x = cx - w * align; y = bl(f, cy)
     for ch in s: cv.drawString(ch, x, y, f, P(col(c, a))); x += f.measureText(ch) + sp
     return w
-def card(cv, r, a=1.0, rad=26, fill=WHITE, edge='#C9D3E3', shadow=0.22, lift=14):
+def card(cv, r, a=1.0, rad=26, fill=WHITE, edge='#EBD6C2', shadow=0.22, lift=14):
     """kartu putih membulat dengan bayangan lembut (gaya tema terang)"""
     if a <= 0: return
     rr = skia.RRect.MakeRectXY(r, rad, rad)
@@ -103,7 +106,7 @@ def label(cv, text, tx, ty, lx, ly, a=1.0, c=INK, dot=ORANGE, size=26, sub=None)
     cy = ly - (size * 0.45 if sub else 0)
     cv.drawString(text, lx - w / 2 + 4, bl(f, cy), f, P(col(c, aa)))
     if sub: cv.drawString(sub, lx - ws / 2 + 4, bl(fs, cy + size * 0.95), fs, P(col(MUTED, aa)))
-def check(cv, cx, cy, r, p_, a=1.0, c=TEAL):
+def check(cv, cx, cy, r, p_, a=1.0, c=ORANGE):
     if p_ <= 0 or a <= 0: return
     cv.drawCircle(cx, cy, r, P(col(c, a * eo(p_))))
     pth = skia.Path(); pth.moveTo(cx - r * 0.45, cy + r * 0.02); pth.lineTo(cx - r * 0.1, cy + r * 0.38); pth.lineTo(cx + r * 0.5, cy - r * 0.35)
@@ -116,21 +119,40 @@ def wrench(cv, x, y, s, c=ORANGE, a=1.0, rot=-40):
     h = skia.Path(); h.addCircle(0, -s * 0.38, s * 0.36); p = skia.Op(p, h, skia.PathOp.kUnion_PathOp)
     n = skia.Path(); n.addRect(skia.Rect(-s * 0.13, -s * 0.85, s * 0.13, -s * 0.36)); p = skia.Op(p, n, skia.PathOp.kDifference_PathOp)
     cv.drawPath(p, P(col(c, a))); cv.restore()
-def logo_mark(cv, cx, cy, s, a=1.0, t=0.0, open_=1.0):
-    """logo: kubus isometrik yang 'dibongkar' (tiga sisi terpisah) di dalam lencana oranye"""
-    if a <= 0: return
-    r = skia.Rect(cx - s, cy - s, cx + s, cy + s)
-    cv.drawRoundRect(r.makeOffset(0, s * 0.1), s * 0.42, s * 0.42, P(col(ORANGE_D, 0.5 * a), blur=s * 0.12))
-    cv.drawRoundRect(r, s * 0.42, s * 0.42, P(shader=lg(0, cy - s, 0, cy + s, [col('#FF9A45', a), col(ORANGE, a), col(ORANGE_D, a)], [0, 0.5, 1])))
-    k = s * 0.42; c30 = math.cos(math.radians(30)); gap = s * 0.09 * open_
-    def face(pts, c):
+C30 = math.cos(math.radians(30))
+def logo_disc(cv, cx, cy, r, a=1.0, navy=False, rect=None):
+    """lingkaran logo bergradasi (cahaya dari kiri atas); rect = isi persegi penuh (foto profil)"""
+    cs = ['#2A3F6B', '#1A2A4C', INK] if navy else ['#FFA352', ORANGE, ORANGE_D]
+    sh = rg(cx - r * 0.35, cy - r * 0.45, r * 1.55, [col(c, a) for c in cs], [0, 0.55, 1])
+    if rect is not None: cv.drawRect(rect, P(shader=sh))
+    else: cv.drawCircle(cx, cy, r, P(shader=sh))
+def logo_cube(cv, cx, cy, k, gap, a=1.0, navy=False):
+    """kubus isometrik terbongkar: atas putih, kiri krem, kanan navy (di latar navy: kanan oranye)"""
+    def poly(pts):
         p = skia.Path(); p.moveTo(*pts[0])
         for q in pts[1:]: p.lineTo(*q)
-        p.close(); cv.drawPath(p, P(col(c, a)))
-    top = [(cx, cy - k), (cx + k * c30, cy - k * 0.5), (cx, cy), (cx - k * c30, cy - k * 0.5)]
-    face([(x, y - gap) for x, y in top], WHITE)
-    face([(cx - k * c30 - gap * c30, cy - k * 0.5 + gap * 0.5), (cx - gap * c30, cy + gap * 0.5), (cx - gap * c30, cy + k + gap * 0.5), (cx - k * c30 - gap * c30, cy + k * 0.5 + gap * 0.5)], '#FFE2C8')
-    face([(cx + gap * c30, cy + gap * 0.5), (cx + k * c30 + gap * c30, cy - k * 0.5 + gap * 0.5), (cx + k * c30 + gap * c30, cy + k * 0.5 + gap * 0.5), (cx + gap * c30, cy + k + gap * 0.5)], INK)
+        p.close(); return p
+    mv = lambda pts, dx, dy: [(x + dx, y + dy) for x, y in pts]
+    top = [(cx, cy - k), (cx + k * C30, cy - k * 0.5), (cx, cy), (cx - k * C30, cy - k * 0.5)]
+    left = [(cx - k * C30, cy - k * 0.5), (cx, cy), (cx, cy + k), (cx - k * C30, cy + k * 0.5)]
+    right = [(cx, cy), (cx + k * C30, cy - k * 0.5), (cx + k * C30, cy + k * 0.5), (cx, cy + k)]
+    faces = [  # (titik, gradasi, arah gradasi, kilau tepi)
+        (mv(top, 0, -gap), [WHITE, '#EEF2F8'], (cx, cy - k, cx, cy), 0.9),
+        (mv(left, -gap * C30, gap * 0.5), ['#FFE9D4', CREAM_D], (cx - k * C30, cy - k * 0.5, cx, cy + k), 0.9),
+        (mv(right, gap * C30, gap * 0.5), [ORANGE, ORANGE_D] if navy else [INK, '#22345C'], (cx + k * C30, cy - k * 0.5, cx, cy + k), 0.35)]
+    shade, sa = ('#050A18', 0.55) if navy else (INK, 0.30)
+    for pts, *_ in faces: cv.drawPath(poly(mv(pts, 0, k * 0.07)), P(col(shade, sa * a), blur=k * 0.07))
+    for pts, cs, (x0, y0, x1, y1), hla in faces:
+        p = poly(pts); cv.drawPath(p, P(shader=lg(x0, y0, x1, y1, [col(cs[0], a), col(cs[1], a)])))
+        cv.save(); cv.clipPath(p, doAntiAlias=True)
+        hl = skia.Path(); hl.moveTo(*pts[0]); hl.lineTo(*pts[1]); cv.drawPath(hl, P(col(WHITE, hla * a), stroke=k * 0.04)); cv.restore()
+def logo_mark(cv, cx, cy, s, a=1.0, t=0.0, open_=1.0):
+    """logo: kubus isometrik yang 'dibongkar' di lingkaran oranye (jari-jari s); open_ 0..1 = lebar celah"""
+    if a <= 0 or s <= 0: return
+    cv.drawCircle(cx, cy + s * 0.08, s, P(col(ORANGE_D, 0.45 * a), blur=s * 0.12))
+    logo_disc(cv, cx, cy, s, a)
+    gap = s * 0.085 * open_
+    logo_cube(cv, cx, cy - gap * 0.25 + s * 0.011, s * 0.52, gap, a)
 
 # ------------------------------------------------------------ latar, judul, caption, watermark
 _bg = None
@@ -138,15 +160,15 @@ def bg_img():
     global _bg
     if _bg is None:
         s = skia.Surface(W, H); c = s.getCanvas()
-        c.drawRect(skia.Rect(0, 0, W, H), P(shader=lg(0, 0, 0, H, [col('#EEF3FA'), col('#E3EAF4'), col('#C9D6E8'), col('#B7C7DD')], [0, 0.4, 0.78, 1])))
+        c.drawRect(skia.Rect(0, 0, W, H), P(shader=lg(0, 0, 0, H, [col('#FFF9F3'), col('#FDEFE2'), col('#F8DEC6'), col('#F3CFAF')], [0, 0.4, 0.78, 1])))
         c.drawRect(skia.Rect(0, 0, W, H), P(shader=rg(540, 820, 760, [col(WHITE, 0.7), col(WHITE, 0)])))
         p = skia.Path()                                                   # lantai grid isometrik tipis (garis, tanpa titik)
         for k in range(-14, 15):
             p.moveTo(540 + k * 90 - 1400 * 0.866, 1500 - 1400 * 0.5); p.lineTo(540 + k * 90 + 1400 * 0.866, 1500 + 1400 * 0.5)
             p.moveTo(540 + k * 90 + 1400 * 0.866, 1500 - 1400 * 0.5); p.lineTo(540 + k * 90 - 1400 * 0.866, 1500 + 1400 * 0.5)
         c.save(); c.clipRect(skia.Rect(0, 1100, W, H))
-        c.drawPath(p, P(col('#9FB2CC', 0.45), stroke=1.6)); c.restore()
-        c.drawRect(skia.Rect(0, 1100, W, H), P(shader=lg(0, 1100, 0, 1500, [col('#E3EAF4', 1), col('#E3EAF4', 0)])))
+        c.drawPath(p, P(col('#E2A57A', 0.40), stroke=1.6)); c.restore()
+        c.drawRect(skia.Rect(0, 1100, W, H), P(shader=lg(0, 1100, 0, 1500, [col('#FDEFE2', 1), col('#FDEFE2', 0)])))
         _bg = s.makeImageSnapshot()
     return _bg
 def draw_bg(cv, t): cv.drawImage(bg_img(), 0, 0)
@@ -161,13 +183,13 @@ def draw_title(cv, t):
     layer(cv, a)
     fb = font(MONO, 22); tw = sum(fb.measureText(ch) + 3 for ch in 'BONGKAR BENDA') - 3; bw = tw + 92
     r = skia.Rect(540 - bw / 2, 128 + dy, 540 + bw / 2, 176 + dy)
-    cv.drawRoundRect(r, 24, 24, P(col(INK))); wrench(cv, r.left() + 34, r.centerY() + 2, 26, ORANGE)
+    cv.drawRoundRect(r, 24, 24, P(col(INK))); logo_mark(cv, r.left() + 30, r.centerY(), 17)
     x = r.left() + 62; y = bl(fb, r.centerY())
     for ch in 'BONGKAR BENDA': cv.drawString(ch, x, y, fb, P(col(WHITE))); x += fb.measureText(ch) + 3
     f1 = font(XB, 132); s1 = TITLE[0]; w1 = f1.measureText(s1)
     if w1 > 960: f1 = font(XB, 132 * 960 / w1); w1 = f1.measureText(s1)
     y1 = bl(f1, 268 + dy)
-    for k in range(7, 0, -1): cv.drawString(s1, 540 - w1 / 2 + k * 0.6, y1 + k * 1.1, f1, P(col(mixc('#C3CEE0', '#9AA8C0', k / 7))))
+    for k in range(7, 0, -1): cv.drawString(s1, 540 - w1 / 2 + k * 0.6, y1 + k * 1.1, f1, P(col(mixc('#FFB878', ORANGE_D, k / 7))))
     cv.drawString(s1, 540 - w1 / 2, y1, f1, P(col(INK)))
     f2 = font(XB, 78); s2 = TITLE[1]; w2 = f2.measureText(s2)
     if w2 > 980: f2 = font(XB, 78 * 980 / w2); w2 = f2.measureText(s2)
@@ -221,7 +243,7 @@ def draw_captions(cv, t):
                 if a > 0:
                     y = bl(f, cy) + (1 - eo(p_)) * 14
                     cv.drawString(w, x, y, f, P(col(WHITE, 0.95 * a), blur=10))
-                    cv.drawString(w, x, y + 3, f, P(col('#9AA8C0', 0.35 * a), blur=4))
+                    cv.drawString(w, x, y + 3, f, P(col('#D2A47E', 0.35 * a), blur=4))
                     cv.drawString(w, x, y, f, P(col(ORANGE if h else INK, a)))
                 x += ww
 def draw_watermark(cv, t):

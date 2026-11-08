@@ -19,7 +19,7 @@ Proyek video pendek "cara kerja benda raksasa" milik ALFA (terpisah dari Ruang P
 ## Aturan teknis
 - Mesin: `engine/bb.py` + `engine/iso.py` (skia-python). Episode = folder di `episodes/` berisi `vo.py`, `episode.py`, `voice.sh`, `build.sh`. Contoh lengkap: `episodes/ep01_lift/`.
 - Suara: Gemini TTS voice **Puck** (`BB_VOICE`), model `gemini-3.1-flash-tts-preview`, resep 1 request + dipotong di jeda (`engine/vo_full.py`) + `engine/tighten.py 0.22`. Durasi video 40–55 dtk. Contoh suara lain di `samples/suara/`.
-- Visual: tema terang, isometrik 3D yang dibelah, judul hanya di adegan pertama, ilustrasi mengisi layar sampai ±y 1700 (jangan banyak ruang kosong), caption 56 px navy + kata kunci oranye di atas kartu putih transparan berpusat y 1495 (`CAP_Y`), chip/kartu adegan di atas y ±1370, satu ide per adegan, label penunjuk, outro logo + Follow. Hook bergerak sejak frame pertama. Tanpa titik-titik bokeh.
+- Visual: tema terang dengan warna logo (latar krem, struktur navy, sorotan oranye; tanpa teal/biru/ungu, lihat BRAND.md), isometrik 3D yang dibelah, judul hanya di adegan pertama, ilustrasi mengisi layar sampai ±y 1700 (jangan banyak ruang kosong), caption 56 px navy + kata kunci oranye di atas kartu putih transparan berpusat y 1495 (`CAP_Y`), chip/kartu adegan di atas y ±1370, satu ide per adegan, label penunjuk, outro logo + Follow. Hook bergerak sejak frame pertama. Tanpa titik-titik bokeh.
 - Musik: lagu instrumental orisinal di `engine/audio.py` (C–G–Am–F, 108 BPM; `BB_BPM`/`BB_TR` untuk variasi). Jangan pakai lagu berhak cipta; sarankan lagu trending lewat aplikasi pada versi `_tanpa-musik` (suara asli 100%, lagu 10–15%).
 - Model gambar Gemini butuh billing (Free Tier limit 0); tanpa billing semua digambar dengan kode.
 
