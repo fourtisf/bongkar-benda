@@ -1,0 +1,58 @@
+[
+ {
+  "i": 0,
+  "anchor": 0.15,
+  "text": "Kapal ini dari baja, beratnya ribuan ton. Kok bisa ngapung? Ini alasannya.",
+  "file": "vo/l00.wav",
+  "dur": 6.22
+ },
+ {
+  "i": 1,
+  "anchor": 6.72,
+  "text": "Pertama, lambungnya berongga, isinya udara. Jadi kalau dirata-rata, kapal ini lebih ringan dari air.",
+  "file": "vo/l01.wav",
+  "dur": 7.088
+ },
+ {
+  "i": 2,
+  "anchor": 14.158,
+  "text": "Kedua, kapal menyingkirkan banyak air. Air itu mendorong balik ke atas, sama kuat dengan berat kapal.",
+  "file": "vo/l02.wav",
+  "dur": 6.623
+ },
+ {
+  "i": 3,
+  "anchor": 21.131,
+  "text": "Ketiga, lambungnya dibagi sekat kedap air. Kalau satu ruang bocor, kapal tetap mengapung.",
+  "file": "vo/l03.wav",
+  "dur": 5.499
+ },
+ {
+  "i": 4,
+  "anchor": 26.98,
+  "text": "Sejak tahun delapan belas tujuh puluh enam, berkat Samuel Plimsoll, kapal wajib punya garis muat: batas aman muatan.",
+  "file": "vo/l04.wav",
+  "dur": 6.738
+ },
+ {
+  "i": 5,
+  "anchor": 34.068,
+  "text": "Di Merak sampai Bakauheni, puluhan kapal feri bolak-balik siang dan malam.",
+  "file": "vo/l05.wav",
+  "dur": 4.274
+ },
+ {
+  "i": 6,
+  "anchor": 38.692,
+  "text": "Benda apa yang mau kamu bongkar berikutnya? Tulis di komentar!",
+  "file": "vo/l06.wav",
+  "dur": 3.205
+ },
+ {
+  "i": 7,
+  "anchor": 42.247,
+  "text": "Follow Bongkar Benda, biar makin paham cara kerja benda di sekitarmu.",
+  "file": "vo/l07.wav",
+  "dur": 3.717
+ }
+]

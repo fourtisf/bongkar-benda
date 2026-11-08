@@ -4,7 +4,7 @@
 - [x] Terowongan MRT, kok nggak ambruk? — EP02
 - [x] Jembatan Suramadu, kok nggak ambruk? — EP03
 - [ ] Pesawat, kok nggak kesetrum petir? — detail #2 (**rekomendasi EP04**)
-- [ ] Kapal feri, kok nggak tenggelam? — detail #8 (baru)
+- [x] Kapal feri, kok nggak tenggelam? — EP04
 - [ ] Gedung tertinggi Indonesia, kok nggak roboh kena gempa? — detail #9 (baru, perlu riset struktur)
 - [ ] Kereta cepat, kok bisa 350 km/jam? (Whoosh) — detail #3
 - [ ] Eskalator, kok tangganya nggak habis? — detail #4
@@ -80,7 +80,7 @@ Semua mengikuti pola yang menang: objek raksasa yang dilihat semua orang, hook b
 
 > **Pola hook yang terbukti (EP03 v2):** pengandaian bahaya dalam 1–2 detik pertama ("kalau tanpa X?") → benda runtuh/gagal → **REWIND ⏪** → bagian pentingnya menyala oranye → pertanyaan "kok bisa?" di ±3–4 detik. Kalimat hook maks. ±90 karakter.
 
-### 8. Kapal feri, kok nggak tenggelam? (baru)
+### 8. Kapal feri, kok nggak tenggelam? ✅ jadi EP04
 - **Hook:** "Kapal ini dari baja, beratnya ribuan ton. Kok nggak tenggelam?"
   Visual: feri Merak–Bakauheni dibelah memanjang (truk & mobil di dek), lambung "bocor" → air masuk → kapal miring & tenggelam → REWIND ⏪ → rongga udara di lambung menyala oranye, kapal mengapung lagi.
 - **Alasan:** (1) lambung berisi rongga udara besar, jadi rata-rata massa jenis kapal lebih kecil dari air; (2) kapal memindahkan air sangat banyak → gaya dorong ke atas (Archimedes) sebanding beratnya; (3) lambung dibagi sekat kedap air, kalau satu ruang bocor yang lain tetap kering (cek detail sekat untuk feri).
