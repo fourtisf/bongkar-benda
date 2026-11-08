@@ -2,7 +2,8 @@
 
 - [x] Lift, kok nggak jatuh? — EP01
 - [x] Terowongan MRT, kok nggak ambruk? — EP02
-- [ ] Pesawat, kok nggak kesetrum petir? — detail #2
+- [ ] Jembatan Suramadu, kok nggak ambruk? — **REKOMENDASI EP03**, detail #7
+- [ ] Pesawat, kok nggak kesetrum petir? — detail #2 (cadangan EP03)
 - [ ] Kereta cepat, kok bisa 350 km/jam? (Whoosh) — detail #3
 - [ ] Eskalator, kok tangganya nggak habis? — detail #4
 - [ ] Bendungan, kok nggak jebol? (Jatiluhur = urugan batu berinti tanah, bukan bendungan lengkung) — detail #5
@@ -66,3 +67,12 @@ Semua mengikuti pola yang menang: objek raksasa yang dilihat semua orang, hook b
 - **Sejarah:** cek (mis. crane menara pertama Liebherr, 1949).
 - **Fakta:** [HowStuffWorks: Tower crane](https://science.howstuffworks.com/transport/engines-equipment/tower-crane4.htm), [Science ABC](https://www.scienceabc.com/innovation/how-do-tower-cranes-work).
 - **Kenapa viral:** crane ada di setiap kota besar Indonesia; fakta "crane memanjat dirinya sendiri" mengejutkan dan jarang diketahui.
+
+### 7. Jembatan Suramadu, kok nggak ambruk? ⭐ rekomendasi EP03
+- **Hook:** "Bagian tengah jembatan ini nggak punya tiang di bawahnya, cuma digantung kabel di atas laut. Kok nggak ambruk?"
+  Visual: kamera terbang di atas Selat Madura, mobil melaju di dek, kapal lewat di bawah; dek di antara dua menara bergoyang sesaat → kabel menyala oranye dan menegang, dek stabil.
+- **Alasan:** (1) kabel-kabel menarik dek ke atas menara (gaya tarik), tersebar ke banyak titik; (2) menara meneruskan beban ke bawah sampai pondasi tiang di dasar laut (gaya tekan); (3) kabel di kiri dan kanan menara seimbang, jadi menaranya nggak miring. Visual dibelah: panah tarik oranye di kabel, panah tekan navy di menara sampai pondasi.
+- **Sejarah:** cek saat riset (mis. jembatan cable-stayed modern pertama, Strömsund, Swedia, 1955).
+- **Fakta:** panjang total ±5.438 m, terpanjang di Indonesia saat dibangun; tipe cable-stayed; bentang utama 434 m diapit dua bentang 192 m; ruang bebas ±35 m di atas laut untuk kapal ([Auto2000](https://auto2000.co.id/berita-dan-tips/jembatan-nasional-suramadu), [ITS](https://www.its.ac.id/news/suramadu-jembatan-termegah-indonesia/), [Kedubes RRT, 2009](https://id.china-embassy.gov.cn/indo/sgdt/200904/t20090402_2039859.htm)). Tinggi menara belum terverifikasi, jangan dipakai dulu.
+- **Kenapa viral:** "jembatan" kategori dengan views tertinggi di genre ini (±1,8 jt di akun sejenis); Suramadu ikon nasional yang dikenal semua orang; penonton EP02 sudah disodori "jembatan!" di adegan komentar; visual kabel menyala + kapal lewat di bawah sangat sinematik.
+
