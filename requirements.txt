@@ -1,0 +1,6 @@
+skia-python
+numpy
+scipy
+requests
+pillow
+# juga butuh ffmpeg (apt install ffmpeg)

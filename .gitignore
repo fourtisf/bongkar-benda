@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+episodes/*/preview/
+episodes/*/raw.mp4
+episodes/*/audio*.wav
+episodes/*/timeline.json
+episodes/*/*.mp4

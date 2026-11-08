@@ -1,0 +1,58 @@
+[
+ {
+  "i": 0,
+  "anchor": 0.15,
+  "text": "Kalau kabel lift putus, kamu bakal jatuh? Tenang, hampir nggak mungkin. Ini alasannya.",
+  "file": "vo/l00.wav",
+  "dur": 6.406
+ },
+ {
+  "i": 1,
+  "anchor": 5.85,
+  "text": "Pertama, lift digantung beberapa tali baja sekaligus. Dan menurut standar Eropa, tiap tali minimal dua belas kali lebih kuat dari bebannya.",
+  "file": "vo/l01.wav",
+  "dur": 8.078
+ },
+ {
+  "i": 2,
+  "anchor": 12.96,
+  "text": "Kedua, ada beban penyeimbang di sisi lain. Jadi mesinnya nggak perlu kerja berat.",
+  "file": "vo/l02.wav",
+  "dur": 4.438
+ },
+ {
+  "i": 3,
+  "anchor": 17.0,
+  "text": "Ketiga, rem darurat. Kalau lift meluncur kelewat cepat, rem ini langsung mencengkeram rel, dan lift berhenti.",
+  "file": "vo/l03.wav",
+  "dur": 6.483
+ },
+ {
+  "i": 4,
+  "anchor": 22.76,
+  "text": "Idenya dari Elisha Otis. Tahun delapan belas lima puluh empat, dia menyuruh orang memotong tali liftnya sendiri. Liftnya cuma turun sedikit, lalu tertahan.",
+  "file": "vo/l04.wav",
+  "dur": 8.634
+ },
+ {
+  "i": 5,
+  "anchor": 30.34,
+  "text": "Kalau semuanya gagal pun, di dasar lubang lift masih ada peredam kejut.",
+  "file": "vo/l05.wav",
+  "dur": 3.658
+ },
+ {
+  "i": 6,
+  "anchor": 33.72,
+  "text": "Benda apa yang mau kamu bongkar berikutnya? Tulis di komentar!",
+  "file": "vo/l06.wav",
+  "dur": 3.08
+ },
+ {
+  "i": 7,
+  "anchor": 36.6,
+  "text": "Follow Bongkar Benda, biar makin paham cara kerja benda di sekitarmu.",
+  "file": "vo/l07.wav",
+  "dur": 3.508
+ }
+]
