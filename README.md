@@ -9,8 +9,9 @@ Video pendek 9:16 (TikTok/Reels/Shorts, 40–55 detik) yang **membongkar cara ke
 | `episodes/epXX_nama/` | `vo.py` (naskah + anchor), `episode.py` (adegan), `voice.sh`, `build.sh`, `vo/` (suara) |
 | `videos/` | Hasil render: `bongkar-benda-epXX_nama.mp4` + versi `_tanpa-musik` |
 | `content/` | Copywriting per episode + bank ide |
+| `brand/` | Logo profil TikTok/IG/YouTube (`profil_bongkar-benda.png` = utama, varian `_pop`, `_navy`), lencana transparan, `cek_profil.png` (QA ukuran kecil). Buat ulang: `python3 tools/logo.py` |
 | `samples/suara/` | Contoh suara Gemini (Puck = dipilih, Sadaltager, Laomedeia) |
-| `tools/` | QA: `transcribe.py` (cek suara per baris), `mixcheck.py` (pendengar AI untuk video jadi), `sheet.py` (contact sheet) |
+| `tools/` | QA: `transcribe.py` (cek suara per baris), `mixcheck.py` (pendengar AI untuk video jadi), `sheet.py` (contact sheet), `logo.py` (logo profil) |
 
 ## Pakai
 ```bash

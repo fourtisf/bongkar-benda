@@ -7,5 +7,5 @@
 - **Suara:** Gemini TTS voice **Puck** (cowok cerah, energik), model `gemini-3.1-flash-tts-preview`, gaya "kreator edukasi yang kagum & antusias". Selalu cek transkripsi.
 - **Struktur naskah (±45 dtk):** hook bahaya/kejutan 0–3 dtk ("Kalau kabel lift putus, kamu bakal jatuh?") → "Ini alasannya" (daftar 1-2-3) → tiap alasan 1 adegan → cerita sejarah singkat (orang + tahun) → ajakan komentar "Benda apa yang mau kamu bongkar berikutnya?" → outro logo + Follow.
 - **Fakta:** pakai sumber teknis nyata (standar, sejarah terdokumentasi), sebut angka hanya kalau terverifikasi; label ilustratif ditulis sebagai perkiraan (≈).
-- **Logo:** kubus isometrik yang "dibongkar" (tiga sisi terpisah) di lencana oranye membulat (`logo_mark()` di `engine/bb.py`).
+- **Logo:** kubus isometrik yang "dibongkar" (tiga sisi terpisah) di lencana oranye membulat (`logo_mark()` di `engine/bb.py`). Foto profil: kubus yang sama, besar di lingkaran oranye bergradasi (`brand/profil_bongkar-benda.png`, dibuat `tools/logo.py`; kubus muat ±62% diameter supaya aman dipotong lingkaran dan tetap jelas di 40 px). Tanpa teks di foto profil.
 - **Musik:** lagu instrumental orisinal (`engine/audio.py`, C–G–Am–F, 108 BPM); versi `_tanpa-musik` untuk lagu trending dari aplikasi (suara asli 100%, lagu 10–15%). Jangan menempel lagu berhak cipta.
