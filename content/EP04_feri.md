@@ -1,6 +1,6 @@
 # EP 04 — Kapal feri, kok nggak tenggelam?
 
-Status: **sudah diproduksi** — `videos/bongkar-benda-ep04_feri.mp4` (±47 detik, 1080×1920, lagu orisinal) + `videos/bongkar-benda-ep04_feri_tanpa-musik.mp4`. QA: transkripsi sesuai naskah, loudness −14,0 / −14,1 LUFS, mixcheck: narasi jelas sepanjang video.
+Status: **sudah diproduksi** — `videos/bongkar-benda-ep04_feri.mp4` (±47 detik, 1080×1920, lagu orisinal) + `videos/bongkar-benda-ep04_feri_tanpa-musik.mp4`. QA: transkripsi sesuai naskah, loudness −14,0 / −14,1 LUFS, mixcheck: narasi jelas sepanjang video. **Visual v2 (premium):** kapal detail (jendela kaca berpantul, sekoci, radar, baling-baling, tulisan BONGKAR BENDA di lambung), interior dibelah lengkap, laut dengan kilau & berkas cahaya, hook kapal diremas jadi kubus baja, peragaan Archimedes di tangki kaca.
 
 ## Fakta & sumber
 - **Kenapa kapal baja mengapung:** baja lebih padat dari air, tapi lambung kapal berisi rongga udara besar, sehingga massa jenis rata-rata kapal (baja + udara) lebih kecil dari air; kapal juga memindahkan air dalam jumlah sangat besar ([Gramedia](https://www.gramedia.com/literasi/kenapa-kapal-tidak-tenggelam/)).
@@ -10,9 +10,9 @@ Status: **sudah diproduksi** — `videos/bongkar-benda-ep04_feri.mp4` (±47 deti
 - **Merak–Bakauheni:** ASDP menyiagakan lebih dari 60 kapal besar di Merak untuk arus mudik Lebaran 2026 ([Metro TV](https://www.metrotvnews.com/read/bD2CwZ7V-hadapi-arus-mudik-2026-asdp-siapkan-lebih-dari-60-kapal-besar-di-merak)); data kapasitas kapal terbesar terkini belum terverifikasi (KMP Port Link 2013: ±12.000 GT, [Republika](https://ekonomi.republika.co.id/berita/mo5se0/asdp-ferry-luncurkan-kapal-mewah-berbobot-12000-gt)), jadi tidak dipakai di video.
 - **Catatan jujur (ilustrasi):** "balok baja padat" di hook adalah pengandaian (baja seberat kapal yang dipadatkan) lalu di-rewind. Tata letak ruang, sekat, dan kendaraan di dalam kapal ilustratif. "Beratnya ribuan ton" = bobot umum kapal feri ro-ro besar. Huruf di tanda garis muat (TF, F, T, S, W) mengikuti tanda modern.
 
-## Hook (0–3 dtk)
+## Hook (0–3 dtk) — versi 2
 Suara: **"Kapal ini dari baja, beratnya ribuan ton. Kok bisa ngapung? Ini alasannya."** (pertanyaan di detik ±3,7)
-Visual sejak frame pertama: feri utuh berlayar di laut yang dibelah → chip KALAU BAJANYA PADAT? → kapal **berubah jadi balok baja padat**, tercebur (cipratan), **tenggelam ke dasar laut** dengan gelembung, layar bergetar, TENGGELAM! → **REWIND ⏪**, balok naik & kembali jadi kapal → kapal **dibelah**, ruang-ruang lambung menyala oranye, label RONGGA UDARA + centang → daftar 1 RONGGA UDARA · 2 GAYA APUNG · 3 SEKAT.
+Visual sejak frame pertama: feri detail berlayar dengan buih & jejak ombak → chip KALAU BAJANYA PADAT? → **kapal diremas jadi kubus baja** (percikan logam, kilat merah) → kubus tercebur (semburan air) dan **tenggelam menembus berkas cahaya bawah air** sampai menghantam dasar laut (awan pasir, layar bergetar, TENGGELAM!) → **REWIND ⏪** → kapal utuh lagi → **garis cahaya membelah kapal**, rongga udara di lambung menyala oranye, label RONGGA UDARA + centang → daftar 1 RONGGA UDARA · 2 GAYA APUNG · 3 SEKAT.
 
 ## Naskah (voice Puck)
 ```
