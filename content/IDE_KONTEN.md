@@ -3,14 +3,14 @@
 - [x] Lift, kok nggak jatuh? — EP01
 - [x] Terowongan MRT, kok nggak ambruk? — EP02
 - [x] Jembatan Suramadu, kok nggak ambruk? — EP03
-- [ ] Pesawat, kok nggak kesetrum petir? — detail #2 (**rekomendasi EP04**)
+- [ ] Pesawat, kok nggak kesetrum petir? — detail #2 (**rekomendasi EP05**)
 - [x] Kapal feri, kok nggak tenggelam? — EP04
 - [ ] Gedung tertinggi Indonesia, kok nggak roboh kena gempa? — detail #9 (baru, perlu riset struktur)
 - [ ] Kereta cepat, kok bisa 350 km/jam? (Whoosh) — detail #3
 - [ ] Eskalator, kok tangganya nggak habis? — detail #4
 - [ ] Bendungan, kok nggak jebol? (Jatiluhur = urugan batu berinti tanah, bukan bendungan lengkung) — detail #5
 - [ ] Tower crane, kok nggak roboh? — detail #6
-- [ ] Kapal selam, kok bisa naik-turun? (tangki pemberat diisi air / udara)
+- [ ] Kapal selam, kok bisa naik-turun? (tangki pemberat diisi air / udara) — bisa pakai ulang diorama laut EP04; hindari menyinggung tragedi kapal selam nyata
 - [ ] Helikopter, kok bisa diam di udara? (rotor, baling-baling ekor melawan torsi)
 - [ ] Satelit, kok nggak jatuh? (jatuh terus tapi meleset dari Bumi)
 - [ ] Kapal tanker raksasa, kok nggak terbalik? (titik berat & daya apung)
