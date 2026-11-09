@@ -27,3 +27,4 @@ Proyek video pendek "cara kerja benda raksasa" milik ALFA (terpisah dari Ruang P
 - `GEMINI_API_KEY` dibaca dari environment variable, file `.env` di root (tidak di-commit), atau network secret Claude Code untuk host `generativelanguage.googleapis.com` (header `x-goog-api-key`; `engine/gemini_tts.py` lalu memakai nilai pengganti dan proxy menyuntikkan key).
 - Jangan pernah menulis key di file yang di-commit atau di chat. Sebelum commit: `git diff --cached | grep -E "AIza[0-9A-Za-z_-]{20,}|AQ\.[0-9A-Za-z_.-]{20,}"` harus kosong (key AI Studio baru berawalan `AQ.`).
 - Kuota gratis TTS terbatas (±3 request/menit). Kalau 429, tunggu atau ganti `GEMINI_TTS_MODEL`.
+- Kuota harian model QA (transcribe/mixcheck) juga terbatas. Kalau 429, jalankan dengan `QA_MODEL=gemini-3.1-flash-lite` (atau model flash lain yang tersedia).

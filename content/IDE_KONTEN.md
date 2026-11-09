@@ -3,7 +3,7 @@
 - [x] Lift, kok nggak jatuh? — EP01
 - [x] Terowongan MRT, kok nggak ambruk? — EP02
 - [x] Jembatan Suramadu, kok nggak ambruk? — EP03
-- [ ] Pesawat, kok nggak kesetrum petir? — detail #2 (**rekomendasi EP05**)
+- [x] Pesawat, kok nggak kesetrum petir? — EP05
 - [x] Kapal feri, kok nggak tenggelam? — EP04
 - [ ] Gedung tertinggi Indonesia, kok nggak roboh kena gempa? — detail #9 (baru, perlu riset struktur)
 - [ ] Kereta cepat, kok bisa 350 km/jam? (Whoosh) — detail #3
