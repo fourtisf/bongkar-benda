@@ -16,7 +16,8 @@
 - [ ] Helikopter, kok bisa diam di udara? (rotor, baling-baling ekor melawan torsi)
 - [ ] Satelit, kok nggak jatuh? (jatuh terus tapi meleset dari Bumi)
 - [ ] Kapal tanker raksasa, kok nggak terbalik? (titik berat & daya apung)
-- [ ] Jalan tol layang, kok kuat dilewati truk? (balok girder prategang)
+- [ ] Jalan tol layang MBZ, kok kuat dilewati truk? — detail #13 (baru; koreksi: MBZ pakai gelagar kotak baja, bukan beton prategang)
+- [ ] Bianglala, kok kabinnya tetap tegak? (kabin digantung engsel, gravitasi menjaga tegak) — usulan dari adegan komentar EP06
 
 ---
 
@@ -117,4 +118,11 @@ Semua mengikuti pola yang menang: objek raksasa yang dilihat semua orang, hook b
 - **Alasan:** (1) pondasi tiang tertanam dalam ke tanah keras; (2) struktur dirancang lentur (bergoyang, bukan patah) dengan inti beton kuat di tengah; (3) peredam: contoh Taipei 101 punya bola baja **660 ton** berdiameter 5,5 m yang tergantung di lantai 87–92, mengurangi goyangan hingga ±40% (klaim pabrikan).
 - **Fakta:** [Guinness: peredam terbesar](https://www.guinnessworldrecords.com/world-records/774616-largest-tuned-mass-damper), [Business Insider](https://businessinsider.nl/this-660-ton-pendulum-protects-taiwans-tallest-skyscraper-from-earthquakes/), [The Civil Engineer](https://thecivilengineer.org/news/taipei-101s-impressive-tuned-mass-damper). Untuk konteks Indonesia: aturan bangunan tahan gempa SNI 1726 (cek isi saat riset). Jangan klaim sistem struktur gedung Indonesia tertentu tanpa sumber.
 - **Kenapa viral:** kategori gedung ±940 rb views; gempa dekat dengan semua orang Indonesia; bola baja raksasa yang berayun adalah visual "wow" yang jarang diketahui.
+
+### 13. Jalan tol layang MBZ, kok kuat dilewati truk? (baru)
+- **Hook:** "Jalan ini melayang di atas tol, tiap hari dilewati ribuan truk. Kok nggak melendut?"
+  Visual: tol layang dibelah di atas tol bawah yang macet → truk-truk berat lewat, jalan melendut & patah → REWIND ⏪ → gelagar dibelah: **kotak baja berongga** dengan sekat-sekat menyala oranye.
+- **Alasan (verifikasi detail saat riset):** (1) gelagar berbentuk kotak baja berongga: kaku seperti pipa tapi jauh lebih ringan dari balok padat; (2) tiang & pondasi menyalurkan beban ke tanah; (3) sambungan muai di antara bentang supaya jalan bisa memuai saat panas tanpa retak (cek apakah relevan untuk MBZ).
+- **Fakta:** Tol Layang Sheikh Mohamed bin Zayed (Jakarta–Cikampek II Elevated) ±36,4 km dari Cikunir sampai Karawang Barat, tol layang terpanjang di Indonesia saat dibuka (akhir 2019); dibangun dari **2.585 gelagar kotak baja** yang dipasang malam hari (22.00–05.00) karena ringan dan cepat dipasang ([Wikipedia](https://en.wikipedia.org/wiki/Sheikh_Mohammed_bin_Zayed_Skyway), [Bisnis](https://ekonomi.bisnis.com/read/20190628/45/939129/konstruksi-jalan-tol-layang-japek-rampung-september-2019), [Bisnis: gelagar kotak baja](https://ekonomi.bisnis.com/read/20190910/45/1146572/pengangkatan-gelagar-kotak-baja-proyek-tol-layang-jakartacikampek-selesai), [Okezone](https://economy.okezone.com/read/2019/09/18/470/2106323/japek-elevated-jadi-tol-layang-terpanjang-di-indonesia?page=all)). Prinsip beton prategang (untuk tol layang lain): [STRUCTURE](https://www.structuremag.org/article/prestressed-concrete-bridge-girders/).
+- **Kenapa viral:** kategori jembatan/jalan raksasa termasuk yang terkuat (±1,8 jt views); jutaan pemudik lewat MBZ; banyak yang penasaran "kok jalannya bergoyang/bergelombang" (tangani dengan fakta, jangan klaim tanpa sumber).
 
