@@ -5,8 +5,8 @@
 - [x] Jembatan Suramadu, kok nggak ambruk? — EP03
 - [x] Pesawat, kok nggak kesetrum petir? — EP05
 - [x] Kapal feri, kok nggak tenggelam? — EP04
-- [ ] Roller coaster, kok nggak jatuh pas terbalik? — detail #10 (baru, **rekomendasi EP06**)
-- [ ] Kereta KRL, kok nggak keluar rel pas belok? — detail #11 (baru)
+- [x] Roller coaster, kok nggak jatuh pas terbalik? — EP06
+- [ ] Kereta KRL, kok nggak keluar rel pas belok? — detail #11 (baru, **rekomendasi EP07**)
 - [ ] Gedung pencakar langit, kok nggak roboh kena gempa? — detail #12 (baru, menggantikan #9: prinsip umum + bola peredam raksasa)
 - [ ] Kereta cepat, kok bisa 350 km/jam? (Whoosh) — detail #3
 - [ ] Eskalator, kok tangganya nggak habis? — detail #4
@@ -96,7 +96,7 @@ Semua mengikuti pola yang menang: objek raksasa yang dilihat semua orang, hook b
 - **Fakta:** Autograph Tower, Thamrin Nine, **382,9 m**, gedung tertinggi di Indonesia (data skyscrapercenter, rampung akhir 2022) ([Kontan](https://industri.kontan.co.id/news/autograph-tower-catat-rekor-sebagai-gedung-tertinggi-di-indonesia), [GNFI](https://www.goodnewsfromindonesia.id/2025/07/11/autograph-tower-representasi-gedung-tertinggi-di-indonesia)). **Sistem struktur & tahan gempanya belum terverifikasi** (core wall, outrigger, SNI 1726): wajib riset dokumen perancang/CTBUH sebelum produksi, atau bahas prinsip umum gedung tahan gempa tanpa klaim spesifik.
 - **Kenapa viral:** kategori gedung ±940 rb views; gempa topik yang dekat dengan semua orang Indonesia.
 
-### 10. Roller coaster, kok nggak jatuh pas terbalik? ⭐ rekomendasi EP06 (baru)
+### 10. Roller coaster, kok nggak jatuh pas terbalik? ✅ jadi EP06
 - **Hook:** "Kereta ini terbalik di atas kepala. Penumpangnya kok nggak jatuh?"
   Visual: lintasan loop isometrik raksasa, kereta naik ke puncak loop & terbalik → chip KALAU RODANYA CUMA DI ATAS REL? → kereta lepas & jatuh dari puncak → REWIND ⏪ → rel dibelah: roda bawah (upstop) menjepit rel menyala oranye.
 - **Alasan:** (1) roda menjepit rel dari tiga sisi: roda atas, roda samping, dan roda bawah (upstop) yang mencegah kereta terangkat; (2) di puncak loop kereta bergerak cepat, jadi rel & kursi "mendorong" penumpang ke arah pusat lingkaran (gaya sentripetal), badan tertekan ke kursi; (3) loop bukan lingkaran sempurna tapi bentuk klotoid: sempit di atas, lebar di bawah, supaya tekanan di dasar loop tidak berlebihan (lingkaran sempurna bisa ±5g di dasar). Pengaman: palang pengunci di bahu/pangkuan.

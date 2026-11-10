@@ -1,0 +1,58 @@
+[
+ {
+  "i": 0,
+  "anchor": 0.15,
+  "text": "Kereta ini terbalik di atas kepala. Penumpangnya kok nggak jatuh? Ini alasannya.",
+  "file": "vo/l00.wav",
+  "dur": 5.775
+ },
+ {
+  "i": 1,
+  "anchor": 6.275,
+  "text": "Pertama, rodanya menjepit rel dari tiga sisi: atas, samping, dan bawah. Jadi keretanya nggak bisa lepas.",
+  "file": "vo/l01.wav",
+  "dur": 7.179
+ },
+ {
+  "i": 2,
+  "anchor": 13.804,
+  "text": "Kedua, di puncak, kereta melaju kencang. Badanmu justru tertekan ke kursi, bukan jatuh.",
+  "file": "vo/l02.wav",
+  "dur": 5.617
+ },
+ {
+  "i": 3,
+  "anchor": 19.771,
+  "text": "Ketiga, putarannya nggak bulat sempurna. Atasnya sempit, bawahnya lebar, supaya badanmu nggak tertekan berlebihan.",
+  "file": "vo/l03.wav",
+  "dur": 6.662
+ },
+ {
+  "i": 4,
+  "anchor": 26.783,
+  "text": "Roda penjepit dari bawah ini dipatenkan John Miller, tahun sembilan belas sembilan belas.",
+  "file": "vo/l04.wav",
+  "dur": 4.188
+ },
+ {
+  "i": 5,
+  "anchor": 31.321,
+  "text": "Dulu, putaran pertama di Coney Island bentuknya bulat, dan penumpangnya sampai sakit leher.",
+  "file": "vo/l05.wav",
+  "dur": 4.888
+ },
+ {
+  "i": 6,
+  "anchor": 36.559,
+  "text": "Benda apa yang mau kamu bongkar berikutnya? Tulis di komentar!",
+  "file": "vo/l06.wav",
+  "dur": 3.022
+ },
+ {
+  "i": 7,
+  "anchor": 39.931,
+  "text": "Follow Bongkar Benda, biar makin paham cara kerja benda di sekitarmu.",
+  "file": "vo/l07.wav",
+  "dur": 3.368
+ }
+]
