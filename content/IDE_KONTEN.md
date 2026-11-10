@@ -18,6 +18,8 @@
 - [ ] Kapal tanker raksasa, kok nggak terbalik? (titik berat & daya apung)
 - [ ] Jalan tol layang MBZ, kok kuat dilewati truk? — detail #13 (baru; koreksi: MBZ pakai gelagar kotak baja, bukan beton prategang)
 - [ ] Motor quick shifter, kok bisa ganti gigi tanpa kopling? — detail #14 (baru, usulan ALFA; niche motor)
+- [ ] Motor matic, kok nggak perlu ganti gigi? — detail #15 (baru, seri motor)
+- [ ] Rem ABS, kok motor nggak ngesot? — detail #16 (baru, seri motor)
 - [ ] Bianglala, kok kabinnya tetap tegak? (kabin digantung engsel, gravitasi menjaga tegak) — usulan dari adegan komentar EP06
 
 ---
@@ -136,4 +138,18 @@ Semua mengikuti pola yang menang: objek raksasa yang dilihat semua orang, hook b
 - **Fakta:** cara kerja umum ([RideApart](https://rideapart.com/articles/how-do-motorcycle-quick-shifters-work), [Motorcyclist](https://motorcyclistonline.com/how-quickshifters-work-and-why-theyre-awesome), [Athena](https://www.athena.eu/en-id/corporate/ask-the-expert/how-quick-shift-system-works-pros-and-cons-motorcycles)); di Indonesia: Kawasaki ZX-25R (KQS, naik & turun gigi), Honda CBR250RR SP (aktif di atas ±1.500 rpm, ZX-25R di atas ±2.500 rpm), Yamaha R15M (hanya naik gigi) ([Carmudi](https://www.carmudi.co.id/journal/begini-cara-kerja-sistem-quick-shifter-di-ninja-zx-25r-dan-cbr250rr-sp/), [detikOto](https://oto.detik.com/tips-and-tricks-motor/d-5247664/bedah-cara-kerja-teknologi-quick-shifter-di-honda-cbr250rr-sp), [Autofun](https://www.autofun.co.id/berita-motor/mengenal-quick-shifter-honda-cbr250rr-dan-kawasaki-zx25r-benarbenar-butuh-ini-24723), [GridOto](https://otomotifnet.gridoto.com/read/233107358/manjakan-tangan-kiri-yamaha-r15-v4-bisa-pindah-gigi-tanpa-tarik-kopling)). **Cek saat riset:** lama pemutusan (sumber berbeda: ±15 ms sampai puluhan ms), mekanisme gigi "dog" & drum pemindah, sejarah quick shifter (balap). Data model per tahun bisa sudah berubah (sumber 2020–2021).
 - **Aturan:** motor & merek di visual fiktif (tanpa logo); merek nyata hanya disebut di caption sebagai contoh.
 - **Kenapa berpotensi viral:** komunitas motor Indonesia besar & aktif berkomentar; banyak yang penasaran/berdebat "quick shifter bikin girboks cepat rusak nggak?" (pancingan komentar, jawab dengan fakta).
+
+### 15. Motor matic, kok nggak perlu ganti gigi? (baru, seri motor)
+- **Hook:** "Motor matic nggak punya gigi. Terus kok bisa ngebut dan kuat nanjak?"
+  Visual: motor matic fiktif dibelah (bak CVT terbuka) mendaki tanjakan → chip KALAU SABUKNYA DIAM DI SATU UKURAN? → motor tersendat, mundur di tanjakan → REWIND ⏪ → puli depan menyempit/melebar, sabuk naik-turun, roller menyala oranye.
+- **Alasan:** (1) dua puli + sabuk V (CVT): ukuran lingkar sabuk di puli bisa berubah terus-menerus, jadi "giginya" berganti mulus tanpa tahapan; (2) makin tinggi putaran mesin, roller pemberat di puli depan terlempar keluar dan mendorong puli menyempit, sabuk naik ke lingkar besar; (3) puli belakang berpegas menyesuaikan sebaliknya, jadi rasio berubah otomatis.
+- **Fakta:** [Scooterworks](https://www.scooterworks.com/blogs/news/what-is-a-cvt-on-a-scooter-how-scooter-cvt-transmissions-work), [CycleChaos](https://www.cyclechaos.com/wiki/CVT), [Pinoymoto](https://pinoymoto.blogspot.com/2017/01/cvt-basics-constant-variable.html). Contoh angka (6 roller 8–18 g, mulai bekerja ±2.500 rpm) hanya contoh dari satu sumber, jangan dipakai sebagai angka umum. Data pangsa motor matic di Indonesia & sejarah CVT: cek saat riset (sumber resmi, mis. AISI).
+- **Kenapa viral:** motor matic adalah kendaraan sehari-hari jutaan orang Indonesia; visual puli & sabuk yang bergerak sangat memuaskan; pancingan komentar ("roller berat atau ringan?").
+
+### 16. Rem ABS, kok motor nggak ngesot? (baru, seri motor)
+- **Hook:** "Rem mendadak di jalan licin. Tanpa ABS, roda terkunci dan motor ngesot. Kok yang ini aman?"
+  Visual: motor fiktif rem mendadak → roda terkunci, motor ngesot jatuh → REWIND ⏪ → sensor roda & modulator menyala, tekanan rem dilepas-ditekan berulang (gauge berdenyut), roda tetap berputar.
+- **Alasan:** (1) sensor (cincin bergerigi) di tiap roda membaca kecepatan roda; (2) unit ABS mendeteksi roda yang melambat terlalu cepat (mau terkunci); (3) modulator melepas lalu menekan lagi tekanan rem berulang kali per detik, seperti memompa rem otomatis, jadi roda tetap berputar dan motor bisa dikendalikan.
+- **Fakta:** [Harley-Davidson service info](https://serviceinfo.harley-davidson.com/sip/service/procedure/2190513364611185359/BLAISE/485402/en_US?nid=5113) (hingga ±7 siklus per detik), [Cycle World](https://issues.cycleworld.com/article/1992/7/1/abs-up-close), [RideApart](https://rideapart.com/articles/motorcycle-abs-work). Laju siklus berbeda antar-sistem: tulis "berulang kali per detik", bukan satu angka. Jangan pakai statistik kecelakaan tanpa sumber jelas.
+- **Kenapa viral:** keselamatan & jalan licin musim hujan relevan untuk semua pemotor; hook "ngesot" sangat visual.
 
