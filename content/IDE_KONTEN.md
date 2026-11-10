@@ -6,7 +6,7 @@
 - [x] Pesawat, kok nggak kesetrum petir? — EP05
 - [x] Kapal feri, kok nggak tenggelam? — EP04
 - [x] Roller coaster, kok nggak jatuh pas terbalik? — EP06
-- [ ] Kereta KRL, kok nggak keluar rel pas belok? — detail #11 (baru, **rekomendasi EP07**)
+- [ ] Kereta KRL, kok nggak keluar rel pas belok? — detail #11 (baru, cadangan EP08)
 - [ ] Gedung pencakar langit, kok nggak roboh kena gempa? — detail #12 (baru, menggantikan #9: prinsip umum + bola peredam raksasa)
 - [ ] Kereta cepat, kok bisa 350 km/jam? (Whoosh) — detail #3
 - [ ] Eskalator, kok tangganya nggak habis? — detail #4
@@ -23,6 +23,8 @@
 - [ ] Bianglala, kok kabinnya tetap tegak? (kabin digantung engsel, gravitasi menjaga tegak) — usulan dari adegan komentar EP06
 
 ---
+
+> **Strategi (Nov 2026):** selang-seling seri motor (request penonton EP07) dengan benda raksasa. Sebelum memilih, cek views/like/share/komentar EP01–07 di TikTok & IG: kategori yang menang dijadikan seri.
 
 ## Ide siap produksi (riset awal, Nov 2026)
 
