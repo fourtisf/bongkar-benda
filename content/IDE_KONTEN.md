@@ -17,8 +17,8 @@
 - [ ] Satelit, kok nggak jatuh? (jatuh terus tapi meleset dari Bumi)
 - [ ] Kapal tanker raksasa, kok nggak terbalik? (titik berat & daya apung)
 - [ ] Jalan tol layang MBZ, kok kuat dilewati truk? — detail #13 (baru; koreksi: MBZ pakai gelagar kotak baja, bukan beton prategang)
-- [ ] Motor quick shifter, kok bisa ganti gigi tanpa kopling? — detail #14 (baru, usulan ALFA; niche motor)
-- [ ] Motor matic, kok nggak perlu ganti gigi? — detail #15 (baru, seri motor)
+- [x] Gigi motor, kok nggak patah? (quick shifter, request penonton) — EP07
+- [ ] Motor matic, kok nggak perlu ganti gigi? — detail #15 (baru, seri motor, **rekomendasi EP08**)
 - [ ] Rem ABS, kok motor nggak ngesot? — detail #16 (baru, seri motor)
 - [ ] Bianglala, kok kabinnya tetap tegak? (kabin digantung engsel, gravitasi menjaga tegak) — usulan dari adegan komentar EP06
 
@@ -129,7 +129,7 @@ Semua mengikuti pola yang menang: objek raksasa yang dilihat semua orang, hook b
 - **Fakta:** Tol Layang Sheikh Mohamed bin Zayed (Jakarta–Cikampek II Elevated) ±36,4 km dari Cikunir sampai Karawang Barat, tol layang terpanjang di Indonesia saat dibuka (akhir 2019); dibangun dari **2.585 gelagar kotak baja** yang dipasang malam hari (22.00–05.00) karena ringan dan cepat dipasang ([Wikipedia](https://en.wikipedia.org/wiki/Sheikh_Mohammed_bin_Zayed_Skyway), [Bisnis](https://ekonomi.bisnis.com/read/20190628/45/939129/konstruksi-jalan-tol-layang-japek-rampung-september-2019), [Bisnis: gelagar kotak baja](https://ekonomi.bisnis.com/read/20190910/45/1146572/pengangkatan-gelagar-kotak-baja-proyek-tol-layang-jakartacikampek-selesai), [Okezone](https://economy.okezone.com/read/2019/09/18/470/2106323/japek-elevated-jadi-tol-layang-terpanjang-di-indonesia?page=all)). Prinsip beton prategang (untuk tol layang lain): [STRUCTURE](https://www.structuremag.org/article/prestressed-concrete-bridge-girders/).
 - **Kenapa viral:** kategori jembatan/jalan raksasa termasuk yang terkuat (±1,8 jt views); jutaan pemudik lewat MBZ; banyak yang penasaran "kok jalannya bergoyang/bergelombang" (tangani dengan fakta, jangan klaim tanpa sumber).
 
-### 14. Motor quick shifter, kok bisa ganti gigi tanpa kopling? (baru, usulan ALFA)
+### 14. Motor quick shifter, kok bisa ganti gigi tanpa kopling? ✅ jadi EP07 (judul: Gigi motor, kok nggak patah?)
 - **Posisi:** bukan "benda raksasa" (pola terkuat), tapi komunitas motor di Indonesia sangat besar dan visual mesin + girboks yang dibelah sangat memuaskan. Anggap sebagai episode variasi / uji niche motor.
 - **Judul layar:** "Motor, kok ganti gigi tanpa kopling?" (2–4 kata versi pendek: "Quick shifter, kok bisa?")
 - **Hook:** "Motor ini ganti gigi tanpa tarik kopling, gas tetap dibuka. Kok girboksnya nggak rusak?"
