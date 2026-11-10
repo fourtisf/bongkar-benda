@@ -6,8 +6,8 @@
 - [x] Pesawat, kok nggak kesetrum petir? — EP05
 - [x] Kapal feri, kok nggak tenggelam? — EP04
 - [x] Roller coaster, kok nggak jatuh pas terbalik? — EP06
-- [ ] Kereta KRL, kok nggak keluar rel pas belok? — detail #11 (baru, cadangan EP08)
-- [ ] Gedung pencakar langit, kok nggak roboh kena gempa? — detail #12 (baru, menggantikan #9: prinsip umum + bola peredam raksasa)
+- [x] Gedung tinggi, kok nggak roboh kena gempa? — EP08
+- [ ] Kereta KRL, kok nggak keluar rel pas belok? — detail #11 (baru, cadangan EP09/EP10)
 - [ ] Kereta cepat, kok bisa 350 km/jam? (Whoosh) — detail #3
 - [ ] Eskalator, kok tangganya nggak habis? — detail #4
 - [ ] Bendungan, kok nggak jebol? (Jatiluhur = urugan batu berinti tanah, bukan bendungan lengkung) — detail #5
@@ -18,13 +18,13 @@
 - [ ] Kapal tanker raksasa, kok nggak terbalik? (titik berat & daya apung)
 - [ ] Jalan tol layang MBZ, kok kuat dilewati truk? — detail #13 (baru; koreksi: MBZ pakai gelagar kotak baja, bukan beton prategang)
 - [x] Gigi motor, kok nggak patah? (quick shifter, request penonton) — EP07
-- [ ] Motor matic, kok nggak perlu ganti gigi? — detail #15 (baru, seri motor, **rekomendasi EP08**)
+- [ ] Motor matic, kok nggak perlu ganti gigi? — detail #15 (baru, seri motor, **rekomendasi EP09**)
 - [ ] Rem ABS, kok motor nggak ngesot? — detail #16 (baru, seri motor)
 - [ ] Bianglala, kok kabinnya tetap tegak? (kabin digantung engsel, gravitasi menjaga tegak) — usulan dari adegan komentar EP06
 
 ---
 
-> **Strategi (Nov 2026):** selang-seling seri motor (request penonton EP07) dengan benda raksasa. Sebelum memilih, cek views/like/share/komentar EP01–07 di TikTok & IG: kategori yang menang dijadikan seri.
+> **Strategi (Nov 2026):** selang-seling seri motor (request penonton EP07) dengan benda raksasa. Sebelum memilih, cek views/like/share/komentar EP01–08 di TikTok & IG: kategori yang menang dijadikan seri.
 
 ## Ide siap produksi (riset awal, Nov 2026)
 
@@ -117,7 +117,7 @@ Semua mengikuti pola yang menang: objek raksasa yang dilihat semua orang, hook b
 - **Fakta:** [Practical Engineering](https://practical.engineering/blog/2023/10/3/why-are-rails-shaped-like-that), [ScienceABC: cara roda kereta berbelok](https://www.scienceabc.com/eyeopeners/how-do-train-wheels-turn.html), [The Contact Patch](https://the-contact-patch.com/book/rail/r0415-curving). Catatan: profil roda nyata tidak kerucut sempurna (diasah mengikuti profil rel). Sejarah & angka penumpang KRL: cek saat riset.
 - **Kenapa viral:** jutaan orang naik KRL tiap hari; faktanya mengejutkan ("roda kereta itu miring!") dan visual kerucut yang dibelah sangat jelas.
 
-### 12. Gedung pencakar langit, kok nggak roboh kena gempa? (baru, menggantikan #9)
+### 12. Gedung pencakar langit, kok nggak roboh kena gempa? (sudah jadi EP08, lihat `content/EP08_gedung.md`)
 - **Hook:** "Tanah berguncang, gedung setinggi ratusan meter ini bergoyang. Kok nggak roboh?"
   Visual: gedung dibelah, gempa mengguncang → gedung kaku retak & roboh → REWIND ⏪ → gedung bergoyang lentur, di puncaknya **bola baja raksasa berayun** melawan goyangan.
 - **Alasan:** (1) pondasi tiang tertanam dalam ke tanah keras; (2) struktur dirancang lentur (bergoyang, bukan patah) dengan inti beton kuat di tengah; (3) peredam: contoh Taipei 101 punya bola baja **660 ton** berdiameter 5,5 m yang tergantung di lantai 87–92, mengurangi goyangan hingga ±40% (klaim pabrikan).

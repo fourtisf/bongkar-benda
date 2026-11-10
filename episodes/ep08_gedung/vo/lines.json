@@ -1,0 +1,58 @@
+[
+ {
+  "i": 0,
+  "anchor": 0.15,
+  "text": "Tanah berguncang, gedung setinggi ratusan meter ini ikut bergoyang. Kok nggak roboh? Ini alasannya.",
+  "file": "vo/l00.wav",
+  "dur": 6.588
+ },
+ {
+  "i": 1,
+  "anchor": 7.088,
+  "text": "Pertama, pondasinya tertanam dalam, sampai ke lapisan tanah yang keras.",
+  "file": "vo/l01.wav",
+  "dur": 4.56
+ },
+ {
+  "i": 2,
+  "anchor": 11.998,
+  "text": "Kedua, gedungnya dirancang lentur. Saat gempa, ia bergoyang, bukan patah.",
+  "file": "vo/l02.wav",
+  "dur": 5.283
+ },
+ {
+  "i": 3,
+  "anchor": 17.631,
+  "text": "Ketiga, ada peredam. Di Taipei seratus satu, bola baja seberat enam ratus enam puluh ton berayun melawan goyangan gedung.",
+  "file": "vo/l03.wav",
+  "dur": 7.815
+ },
+ {
+  "i": 4,
+  "anchor": 25.796,
+  "text": "Ide gedung lentur dipelopori Kiyoshi Muto. Tahun sembilan belas enam puluh delapan, dia membangun gedung pencakar langit pertama di Jepang.",
+  "file": "vo/l04.wav",
+  "dur": 7.124
+ },
+ {
+  "i": 5,
+  "anchor": 33.27,
+  "text": "Di Padang, bahkan ada gedung yang berdiri di atas bantalan karet peredam gempa.",
+  "file": "vo/l05.wav",
+  "dur": 4.356
+ },
+ {
+  "i": 6,
+  "anchor": 37.976,
+  "text": "Benda apa yang mau kamu bongkar berikutnya? Tulis di komentar!",
+  "file": "vo/l06.wav",
+  "dur": 2.941
+ },
+ {
+  "i": 7,
+  "anchor": 41.267,
+  "text": "Follow Bongkar Benda, biar makin paham cara kerja benda di sekitarmu.",
+  "file": "vo/l07.wav",
+  "dur": 3.867
+ }
+]
