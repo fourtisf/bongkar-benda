@@ -5,7 +5,9 @@
 - [x] Jembatan Suramadu, kok nggak ambruk? — EP03
 - [x] Pesawat, kok nggak kesetrum petir? — EP05
 - [x] Kapal feri, kok nggak tenggelam? — EP04
-- [ ] Gedung tertinggi Indonesia, kok nggak roboh kena gempa? — detail #9 (baru, perlu riset struktur)
+- [ ] Roller coaster, kok nggak jatuh pas terbalik? — detail #10 (baru, **rekomendasi EP06**)
+- [ ] Kereta KRL, kok nggak keluar rel pas belok? — detail #11 (baru)
+- [ ] Gedung pencakar langit, kok nggak roboh kena gempa? — detail #12 (baru, menggantikan #9: prinsip umum + bola peredam raksasa)
 - [ ] Kereta cepat, kok bisa 350 km/jam? (Whoosh) — detail #3
 - [ ] Eskalator, kok tangganya nggak habis? — detail #4
 - [ ] Bendungan, kok nggak jebol? (Jatiluhur = urugan batu berinti tanah, bukan bendungan lengkung) — detail #5
@@ -93,4 +95,26 @@ Semua mengikuti pola yang menang: objek raksasa yang dilihat semua orang, hook b
   Visual: Autograph Tower (Jakarta) dibelah, tanah berguncang → gedung bergoyang makin keras & retak → REWIND ⏪ → inti beton & pondasi menyala, goyangan teredam.
 - **Fakta:** Autograph Tower, Thamrin Nine, **382,9 m**, gedung tertinggi di Indonesia (data skyscrapercenter, rampung akhir 2022) ([Kontan](https://industri.kontan.co.id/news/autograph-tower-catat-rekor-sebagai-gedung-tertinggi-di-indonesia), [GNFI](https://www.goodnewsfromindonesia.id/2025/07/11/autograph-tower-representasi-gedung-tertinggi-di-indonesia)). **Sistem struktur & tahan gempanya belum terverifikasi** (core wall, outrigger, SNI 1726): wajib riset dokumen perancang/CTBUH sebelum produksi, atau bahas prinsip umum gedung tahan gempa tanpa klaim spesifik.
 - **Kenapa viral:** kategori gedung ±940 rb views; gempa topik yang dekat dengan semua orang Indonesia.
+
+### 10. Roller coaster, kok nggak jatuh pas terbalik? ⭐ rekomendasi EP06 (baru)
+- **Hook:** "Kereta ini terbalik di atas kepala. Penumpangnya kok nggak jatuh?"
+  Visual: lintasan loop isometrik raksasa, kereta naik ke puncak loop & terbalik → chip KALAU RODANYA CUMA DI ATAS REL? → kereta lepas & jatuh dari puncak → REWIND ⏪ → rel dibelah: roda bawah (upstop) menjepit rel menyala oranye.
+- **Alasan:** (1) roda menjepit rel dari tiga sisi: roda atas, roda samping, dan roda bawah (upstop) yang mencegah kereta terangkat; (2) di puncak loop kereta bergerak cepat, jadi rel & kursi "mendorong" penumpang ke arah pusat lingkaran (gaya sentripetal), badan tertekan ke kursi; (3) loop bukan lingkaran sempurna tapi bentuk klotoid: sempit di atas, lebar di bawah, supaya tekanan di dasar loop tidak berlebihan (lingkaran sempurna bisa ±5g di dasar). Pengaman: palang pengunci di bahu/pangkuan.
+- **Sejarah:** cek saat riset (mis. loop klotoid pertama pada roller coaster modern, Revolution di Six Flags Magic Mountain, 1976 — perlu verifikasi; atau Werner Stengel).
+- **Fakta:** [ScienceABC](https://www.scienceabc.com/pure-sciences/why-dont-we-fall-off-when-a-roller-coaster-makes-an-upside-down-turn.html), [Gizmodo: loop tidak pernah bulat](https://gizmodo.com/why-roller-coaster-loops-are-never-circular-1549063718), [Universitas Gothenburg (Liseberg): bentuk loop](https://physics.gu.se/LISEBERG/eng/loop_pe.html).
+- **Kenapa viral:** rasa takut + penasaran yang universal (semua orang pernah lihat atau naik); momen "terbalik lalu jatuh" adalah hook visual paling dramatis sejauh ini; mudah dibagikan ("tag teman yang takut naik roller coaster"). Jangan pakai nama/logo taman hiburan tertentu di visual.
+
+### 11. Kereta KRL, kok nggak keluar rel pas belok? (baru)
+- **Hook:** "Rodanya nyatu sama poros, nggak bisa belok kayak mobil. Terus kok KRL bisa belok tanpa keluar rel?"
+  Visual: KRL melaju di tikungan; roda silinder biasa → tergelincir keluar rel → REWIND ⏪ → roda dibelah: permukaan roda ternyata **miring seperti kerucut**, menyala oranye.
+- **Alasan:** (1) permukaan roda kereta berbentuk kerucut; (2) saat belok, roda luar menggelinding di bagian roda yang lebih besar dan roda dalam di bagian lebih kecil, jadi roda luar menempuh jarak lebih jauh meski satu poros; (3) bibir roda (flens) di sisi dalam hanya jadi pengaman, jarang menyentuh rel kecuali di tikungan tajam.
+- **Fakta:** [Practical Engineering](https://practical.engineering/blog/2023/10/3/why-are-rails-shaped-like-that), [ScienceABC: cara roda kereta berbelok](https://www.scienceabc.com/eyeopeners/how-do-train-wheels-turn.html), [The Contact Patch](https://the-contact-patch.com/book/rail/r0415-curving). Catatan: profil roda nyata tidak kerucut sempurna (diasah mengikuti profil rel). Sejarah & angka penumpang KRL: cek saat riset.
+- **Kenapa viral:** jutaan orang naik KRL tiap hari; faktanya mengejutkan ("roda kereta itu miring!") dan visual kerucut yang dibelah sangat jelas.
+
+### 12. Gedung pencakar langit, kok nggak roboh kena gempa? (baru, menggantikan #9)
+- **Hook:** "Tanah berguncang, gedung setinggi ratusan meter ini bergoyang. Kok nggak roboh?"
+  Visual: gedung dibelah, gempa mengguncang → gedung kaku retak & roboh → REWIND ⏪ → gedung bergoyang lentur, di puncaknya **bola baja raksasa berayun** melawan goyangan.
+- **Alasan:** (1) pondasi tiang tertanam dalam ke tanah keras; (2) struktur dirancang lentur (bergoyang, bukan patah) dengan inti beton kuat di tengah; (3) peredam: contoh Taipei 101 punya bola baja **660 ton** berdiameter 5,5 m yang tergantung di lantai 87–92, mengurangi goyangan hingga ±40% (klaim pabrikan).
+- **Fakta:** [Guinness: peredam terbesar](https://www.guinnessworldrecords.com/world-records/774616-largest-tuned-mass-damper), [Business Insider](https://businessinsider.nl/this-660-ton-pendulum-protects-taiwans-tallest-skyscraper-from-earthquakes/), [The Civil Engineer](https://thecivilengineer.org/news/taipei-101s-impressive-tuned-mass-damper). Untuk konteks Indonesia: aturan bangunan tahan gempa SNI 1726 (cek isi saat riset). Jangan klaim sistem struktur gedung Indonesia tertentu tanpa sumber.
+- **Kenapa viral:** kategori gedung ±940 rb views; gempa dekat dengan semua orang Indonesia; bola baja raksasa yang berayun adalah visual "wow" yang jarang diketahui.
 
