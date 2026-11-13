@@ -7,7 +7,7 @@
 - [x] Kapal feri, kok nggak tenggelam? — EP04
 - [x] Roller coaster, kok nggak jatuh pas terbalik? — EP06
 - [x] Gedung tinggi, kok nggak roboh kena gempa? — EP08
-- [ ] Kereta KRL, kok nggak keluar rel pas belok? — detail #11 (baru, cadangan EP09/EP10)
+- [ ] Kereta KRL, kok nggak keluar rel pas belok? — detail #11 (baru, skor 7/7 di `RISET_VIRAL.md`, **rekomendasi EP09**)
 - [ ] Kereta cepat, kok bisa 350 km/jam? (Whoosh) — detail #3
 - [ ] Eskalator, kok tangganya nggak habis? — detail #4
 - [ ] Bendungan, kok nggak jebol? (Jatiluhur = urugan batu berinti tanah, bukan bendungan lengkung) — detail #5
@@ -18,8 +18,11 @@
 - [ ] Kapal tanker raksasa, kok nggak terbalik? (titik berat & daya apung)
 - [ ] Jalan tol layang MBZ, kok kuat dilewati truk? — detail #13 (baru; koreksi: MBZ pakai gelagar kotak baja, bukan beton prategang)
 - [x] Gigi motor, kok nggak patah? (quick shifter, request penonton) — EP07
-- [ ] Motor matic, kok nggak perlu ganti gigi? — detail #15 (baru, seri motor, **rekomendasi EP09**)
+- [ ] Motor matic, kok nggak perlu ganti gigi? — detail #15 (baru, seri motor, skor 5/7, cadangan EP10)
 - [ ] Rem ABS, kok motor nggak ngesot? — detail #16 (baru, seri motor)
+- [ ] Tabung elpiji, kok nggak meledak? — baru dari `RISET_VIRAL.md` (skor 5–7/7; cek fakta Pertamina/SNI, jangan beri saran keselamatan tanpa sumber)
+- [ ] Truk rem blong, kok bisa berhenti di jalur pasir? — baru dari `RISET_VIRAL.md` (skor 6/7; cek lokasi jalur penyelamat nyata di Indonesia)
+- [ ] Pesawat kena turbulensi, kok nggak jatuh? — baru dari `RISET_VIRAL.md` (skor 5–6/7; bisa pakai ulang model EP05)
 - [ ] Bianglala, kok kabinnya tetap tegak? (kabin digantung engsel, gravitasi menjaga tegak) — usulan dari adegan komentar EP06
 
 ---

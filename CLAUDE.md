@@ -5,7 +5,8 @@ Proyek video pendek "cara kerja benda raksasa" milik ALFA (terpisah dari Ruang P
 ## Kalau ALFA minta "ide konten"
 1. Pakai dan lengkapi `content/IDE_KONTEN.md` (tandai [x] yang sudah jadi). Usulkan 4–6 ide bernomor. Tiap ide berisi: judul layar "Benda, kok [hal ajaib]?", hook 0–3 dtk (kalimat + visual yang bergerak), visual 3D isometrik yang dibelah, fakta/sumber terverifikasi, dan alasan kenapa berpotensi viral. Beri satu rekomendasi.
 2. Pola yang menang di genre ini (akun sejenis, Nov 2026): **objek/bangunan raksasa** yang dilihat semua orang tapi tak dipahami cara kerjanya (jembatan 1,8 jt, terowongan 1,4 jt, pesawat 997 rb, gedung 940 rb, kapal 641 rb views) jauh mengalahkan sains kecil sehari-hari (bau hujan, layar sentuh, file terhapus: 13–25 rb). Visual "dibelah" yang memperlihatkan isi sangat memuaskan. Judul 2–4 kata. Video bersambung (part 2) anjlok, jadi buat 1 video tuntas. Tokoh tidak wajib; objeknya bintangnya.
-3. Utamakan objek yang dekat dengan penonton Indonesia (lift mal, KRL/MRT, kereta cepat Whoosh, jalan tol layang, bendungan, kapal feri, eskalator). Jangan meniru topik, naskah, nama, logo, atau tata letak akun lain.
+3. Nilai tiap ide dengan checklist 7 bahan di `content/RISET_VIRAL.md` (benda harian, taruhan bahaya, momen wow visual, fakta "tau nggak?", jelas mau dikirim ke siapa, cerita orang + tahun, tuntas & pendek); targetkan ≥6/7. Caption memakai ajakan kirim yang spesifik ("Kirim ke teman yang tiap hari naik KRL").
+4. Utamakan objek yang dekat dengan penonton Indonesia (lift mal, KRL/MRT, kereta cepat Whoosh, jalan tol layang, bendungan, kapal feri, eskalator). Jangan meniru topik, naskah, nama, logo, atau tata letak akun lain.
 
 ## Kalau ALFA minta "buat video [topik]"
 1. Riset fakta dulu (standar teknis, sumber resmi, sejarah terdokumentasi) dan catat di `content/EPxx_nama.md`. Angka hanya kalau terverifikasi; kisaran ditulis "≈".
