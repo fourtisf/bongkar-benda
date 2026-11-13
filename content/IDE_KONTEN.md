@@ -7,7 +7,7 @@
 - [x] Kapal feri, kok nggak tenggelam? — EP04
 - [x] Roller coaster, kok nggak jatuh pas terbalik? — EP06
 - [x] Gedung tinggi, kok nggak roboh kena gempa? — EP08
-- [ ] Kereta KRL, kok nggak keluar rel pas belok? — detail #11 (baru, skor 7/7 di `RISET_VIRAL.md`, **rekomendasi EP09**)
+- [x] KRL, kok nggak keluar rel pas belok? — EP09
 - [ ] Kereta cepat, kok bisa 350 km/jam? (Whoosh) — detail #3
 - [ ] Eskalator, kok tangganya nggak habis? — detail #4
 - [ ] Bendungan, kok nggak jebol? (Jatiluhur = urugan batu berinti tanah, bukan bendungan lengkung) — detail #5
@@ -18,16 +18,16 @@
 - [ ] Kapal tanker raksasa, kok nggak terbalik? (titik berat & daya apung)
 - [ ] Jalan tol layang MBZ, kok kuat dilewati truk? — detail #13 (baru; koreksi: MBZ pakai gelagar kotak baja, bukan beton prategang)
 - [x] Gigi motor, kok nggak patah? (quick shifter, request penonton) — EP07
-- [ ] Motor matic, kok nggak perlu ganti gigi? — detail #15 (baru, seri motor, skor 5/7, cadangan EP10)
+- [ ] Motor matic, kok nggak perlu ganti gigi? — detail #15 (baru, seri motor, skor 5/7)
 - [ ] Rem ABS, kok motor nggak ngesot? — detail #16 (baru, seri motor)
 - [ ] Tabung elpiji, kok nggak meledak? — baru dari `RISET_VIRAL.md` (skor 5–7/7; cek fakta Pertamina/SNI, jangan beri saran keselamatan tanpa sumber)
-- [ ] Truk rem blong, kok bisa berhenti di jalur pasir? — baru dari `RISET_VIRAL.md` (skor 6/7; cek lokasi jalur penyelamat nyata di Indonesia)
+- [ ] Truk rem blong, kok bisa berhenti di jalur pasir? — baru dari `RISET_VIRAL.md` (skor 6/7; cek lokasi jalur penyelamat nyata di Indonesia; **rekomendasi EP10**)
 - [ ] Pesawat kena turbulensi, kok nggak jatuh? — baru dari `RISET_VIRAL.md` (skor 5–6/7; bisa pakai ulang model EP05)
 - [ ] Bianglala, kok kabinnya tetap tegak? (kabin digantung engsel, gravitasi menjaga tegak) — usulan dari adegan komentar EP06
 
 ---
 
-> **Strategi (Nov 2026):** selang-seling seri motor (request penonton EP07) dengan benda raksasa. Sebelum memilih, cek views/like/share/komentar EP01–08 di TikTok & IG: kategori yang menang dijadikan seri.
+> **Strategi (Nov 2026):** selang-seling seri motor (request penonton EP07) dengan benda raksasa. Sebelum memilih, cek views/like/share/komentar EP01–09 di TikTok & IG: kategori yang menang dijadikan seri.
 
 ## Ide siap produksi (riset awal, Nov 2026)
 
@@ -113,7 +113,7 @@ Semua mengikuti pola yang menang: objek raksasa yang dilihat semua orang, hook b
 - **Fakta:** [ScienceABC](https://www.scienceabc.com/pure-sciences/why-dont-we-fall-off-when-a-roller-coaster-makes-an-upside-down-turn.html), [Gizmodo: loop tidak pernah bulat](https://gizmodo.com/why-roller-coaster-loops-are-never-circular-1549063718), [Universitas Gothenburg (Liseberg): bentuk loop](https://physics.gu.se/LISEBERG/eng/loop_pe.html).
 - **Kenapa viral:** rasa takut + penasaran yang universal (semua orang pernah lihat atau naik); momen "terbalik lalu jatuh" adalah hook visual paling dramatis sejauh ini; mudah dibagikan ("tag teman yang takut naik roller coaster"). Jangan pakai nama/logo taman hiburan tertentu di visual.
 
-### 11. Kereta KRL, kok nggak keluar rel pas belok? (baru)
+### 11. Kereta KRL, kok nggak keluar rel pas belok? (sudah jadi EP09, lihat `content/EP09_krl.md`)
 - **Hook:** "Rodanya nyatu sama poros, nggak bisa belok kayak mobil. Terus kok KRL bisa belok tanpa keluar rel?"
   Visual: KRL melaju di tikungan; roda silinder biasa → tergelincir keluar rel → REWIND ⏪ → roda dibelah: permukaan roda ternyata **miring seperti kerucut**, menyala oranye.
 - **Alasan:** (1) permukaan roda kereta berbentuk kerucut; (2) saat belok, roda luar menggelinding di bagian roda yang lebih besar dan roda dalam di bagian lebih kecil, jadi roda luar menempuh jarak lebih jauh meski satu poros; (3) bibir roda (flens) di sisi dalam hanya jadi pengaman, jarang menyentuh rel kecuali di tikungan tajam.
